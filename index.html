@@ -20,10 +20,10 @@ body{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(-
 a{color:var(--verde-esc)}
 header.topo{background:linear-gradient(135deg,#0f8a6c 0%,#14a37f 55%,#f2a33a 130%);color:#fff;padding:28px 20px 70px;position:relative;overflow:hidden}
 header.topo:after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08)}
-.wrap{max-width:min(1420px,96vw);margin:0 auto;padding-left:16px;padding-right:16px}
+.wrap{max-width:none;width:100%;margin:0 auto;padding-left:clamp(16px,3vw,36px);padding-right:clamp(16px,3vw,36px);box-sizing:border-box}
 .topo h1{margin:0;font-size:30px;line-height:1.15;letter-spacing:-.3px}
 .topo .sub{margin:6px 0 0;font-size:15px;opacity:.95}
-.topo .intro{margin:14px 0 0;max-width:min(980px,100%);font-size:16px;opacity:.97}
+.topo .intro{margin:14px 0 0;max-width:none;font-size:16.5px;opacity:.97}
 .topo .atual{display:inline-block;margin-top:12px;background:rgba(255,255,255,.18);border-radius:999px;padding:4px 12px;font-size:13px}
 main.wrap{margin-top:-48px;padding:0 14px 30px;position:relative}
 .banner-novo{display:none;align-items:center;gap:12px;background:linear-gradient(90deg,#ff7a18,#d6338a);color:#fff;border-radius:var(--raio);padding:14px 18px;margin-bottom:14px;box-shadow:0 6px 20px rgba(214,51,138,.25);font-weight:600}
@@ -50,7 +50,7 @@ select{border:1.5px solid var(--borda);border-radius:10px;padding:9px 10px;font-
 .linha-opcoes label{display:flex;align-items:center;gap:6px;cursor:pointer}
 .btn-limpar{background:none;border:0;color:var(--verde-esc);text-decoration:underline;cursor:pointer;font-size:14px;font-family:inherit}
 .resumo{margin:16px 2px 10px;color:var(--suave);font-size:14.5px}
-.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .card{background:#fff;border-radius:var(--raio);box-shadow:0 3px 14px rgba(16,40,32,.07);padding:16px 16px 12px;display:flex;flex-direction:column;border-top:5px solid var(--cor,#0f8a6c);position:relative}
 .card.encerrado{opacity:.62}
 .card .topo-card{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
@@ -88,7 +88,7 @@ select{border:1.5px solid var(--borda);border-radius:10px;padding:9px 10px;font-
 .verif{margin-top:10px;font-size:12.5px;color:var(--suave);border-top:1px solid var(--borda);padding-top:8px}
 .verif a{color:var(--suave)}
 .vazio{background:#fff;border-radius:var(--raio);padding:30px;text-align:center;color:var(--suave)}
-footer{max-width:min(1420px,96vw);margin:10px auto 30px;padding:0 16px;color:var(--suave);font-size:13.5px}
+footer{max-width:none;width:100%;margin:10px auto 30px;padding:0 clamp(16px,3vw,36px);color:var(--suave);font-size:13.5px;box-sizing:border-box}
 footer .aviso{background:var(--laranja-claro);border-left:4px solid var(--laranja);border-radius:10px;padding:10px 14px;color:#6b4513;margin-bottom:10px}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(40px);background:#183a30;color:#fff;padding:12px 18px;border-radius:12px;font-size:15px;opacity:0;transition:all .25s;z-index:50;max-width:90vw;text-align:center;pointer-events:none}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -222,11 +222,11 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
 @media (max-width:640px){.marca-linha{flex-wrap:wrap}.eco-inovacampoverde{font-size:12.5px;max-width:100%}.eco-inovacampoverde .proposito-mini,.eco-inovacampoverde small{font-size:11px}}
 .credito{font-size:11.5px;color:rgba(255,255,255,.82);letter-spacing:.2px;padding-left:2px}
 .hero{display:block}
-.hero-ilu{position:absolute;right:0;top:20px;width:300px;height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.15))}
+.hero-ilu{position:absolute;right:0;top:20px;width:min(260px,22vw);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.15));opacity:.9}
 .radar-varre{transform-origin:160px 150px;animation:gira 6s linear infinite}
 @keyframes gira{to{transform:rotate(360deg)}}
 .pisca-pt{animation:pisca 2.4s ease-in-out infinite}
-.hero h1,.hero .sub,.hero .intro{max-width:min(980px,calc(100% - 280px))}
+.hero h1,.hero .sub,.hero .intro{max-width:none;padding-right:min(280px,28%)}
 /* cards */
 .card{padding:0;overflow:hidden;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease,box-shadow .2s}
 .card.vis{opacity:1;transform:none}
@@ -300,25 +300,24 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
 .proposito-eco p{margin:0;font-size:15.5px;line-height:1.45;font-weight:600;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.2)}
 @media (max-width:640px){.proposito-eco{padding:12px 14px}.proposito-eco p{font-size:14.5px}}
 
-/* layout uniforme: atalhos + conteúdo */
-.shell{display:grid;grid-template-columns:1fr;gap:16px;align-items:start;margin-top:-48px;position:relative;z-index:2;padding-bottom:24px}
+/* acesso rápido — abas retangulares isoladas + largura total */
+.shell{display:block;margin-top:-52px;position:relative;z-index:2;padding-bottom:28px}
 .shell-main{min-width:0}
 main.painel-area{margin:0;padding:0}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:12px 14px;background:rgba(255,255,255,.94);border:1px solid #e3e8ec;border-radius:16px;box-shadow:0 6px 20px rgba(16,40,32,.08)}
-.pills-tit{display:block;width:100%;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#7a8791;margin-bottom:2px}
-.pills .atalho{background:#f7f9f8!important;border:1px solid #e3e8ec!important;color:#2b3a44!important;font-weight:600;font-size:13.5px;padding:8px 12px;border-radius:10px;box-shadow:none;backdrop-filter:none}
-.pills .atalho:hover{background:#eef5f1!important;border-color:#b9d9c8!important;color:#14532d!important;transform:none;box-shadow:none}
-@media (min-width:1100px){
-  .shell{grid-template-columns:220px minmax(0,1fr);gap:20px;margin-top:-56px}
-  .pills{position:sticky;top:18px;flex-direction:column;flex-wrap:nowrap;gap:2px;padding:14px 10px}
-  .pills-tit{padding:0 8px 8px;border-bottom:1px solid #eef1f3;margin-bottom:6px}
-  .pills .atalho{background:transparent!important;border:0!important;border-left:2px solid transparent!important;border-radius:8px;font-weight:500;padding:9px 10px;text-align:left}
-  .pills .atalho:hover{background:#f3f6f4!important;border-left-color:#2e8b1e!important}
-}
+.acesso{margin:0 0 18px}
+.acesso-tit{margin:0 0 10px;font-size:13px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:#5d6b76}
+.acesso-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.acesso-card{display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:92px;padding:16px 16px 14px;background:#fff;border:1.5px solid #e3e8ec;border-radius:14px;text-decoration:none;color:#1f2a33;box-shadow:0 3px 12px rgba(16,40,32,.06);transition:transform .18s,box-shadow .18s,border-color .18s}
+.acesso-card:hover{transform:translateY(-3px);border-color:#9fd8b5;box-shadow:0 10px 24px rgba(16,40,32,.12)}
+.acesso-card .ico{font-size:22px;line-height:1}
+.acesso-card .nome{font-size:15px;font-weight:700;line-height:1.25;color:#1f2a33}
+.acesso-card .desc{font-size:12.5px;color:#5d6b76;line-height:1.35}
 @media (max-width:640px){
-  .shell{margin-top:-40px;gap:12px}
-  .pills{padding:10px}
-  .pills .atalho{font-size:13px;padding:7px 10px}
+  .shell{margin-top:-40px}
+  .acesso-grade{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .acesso-card{min-height:78px;padding:12px}
+  .acesso-card .nome{font-size:13.5px}
+  .acesso-card .desc{display:none}
 }
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="8f86e914-4372-4a19-87a1-45985c46d121"></script>
@@ -359,17 +358,20 @@ main.painel-area{margin:0;padding:0}
 </header>
 
 <div class="shell wrap">
-    <nav class="pills" aria-label="Atalhos do Radar">
-    <span class="pills-tit">Navegue</span>
-    <a class="atual atalho pill-formacoes" href="formacoes.html">📚 Formações para gestão Pública</a>
-    <a class="atual atalho pill-editais" href="editais.html">📋 Editais</a>
-    <a class="atual atalho pill-empregos" href="empregos.html">💼 Empregos</a>
-    <a class="atual atalho pill-fic" href="cursos-fic.html">🛠️ Cursos FIC</a>
-    <a class="atual atalho pill-tecnicos" href="cursos-tecnicos.html">🎓 Cursos técnicos</a>
-    <a class="atual atalho pill-superior" href="ensino-superior.html">🏫 Ensino superior</a>
-    <a class="atual atalho pill-financia" href="#financiadores">🏦 Quem financia CT&amp;I</a>
-    <a class="atual atalho pill-emendas" href="#emendas">🏛️ Emendas parlamentares</a>
-    </nav>
+    
+<aside class="acesso" aria-label="Acesso rápido às abas">
+  <h2 class="acesso-tit">Acesso rápido</h2>
+  <div class="acesso-grade">
+    <a class="acesso-card" href="formacoes.html"><span class="ico">📚</span><span class="nome">Formações para gestão Pública</span><span class="desc">Cursos e capacitações</span></a>
+    <a class="acesso-card" href="editais.html"><span class="ico">📋</span><span class="nome">Editais</span><span class="desc">Chamadas e oportunidades</span></a>
+    <a class="acesso-card" href="empregos.html"><span class="ico">💼</span><span class="nome">Empregos</span><span class="desc">SINE, aprendiz e estágios</span></a>
+    <a class="acesso-card" href="cursos-fic.html"><span class="ico">🛠️</span><span class="nome">Cursos FIC</span><span class="desc">Sistema S em Campo Verde</span></a>
+    <a class="acesso-card" href="cursos-tecnicos.html"><span class="ico">🎓</span><span class="nome">Cursos técnicos</span><span class="desc">IFMT, ETEC e estaduais</span></a>
+    <a class="acesso-card" href="ensino-superior.html"><span class="ico">🏫</span><span class="nome">Ensino superior</span><span class="desc">Faculdades e polos</span></a>
+    <a class="acesso-card" href="#financiadores"><span class="ico">🏦</span><span class="nome">Quem financia CT&amp;I</span><span class="desc">Fontes e programas</span></a>
+    <a class="acesso-card" href="#emendas"><span class="ico">🏛️</span><span class="nome">Emendas parlamentares</span><span class="desc">Guia e orientação</span></a>
+  </div>
+</aside>
 <div class="shell-main">
 <main class="painel-area">
   <div class="banner-novo" id="bannerNovo" role="status">
