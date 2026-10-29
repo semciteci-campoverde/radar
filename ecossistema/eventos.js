@@ -48,19 +48,6 @@ window.ECO_EVENTOS = {
 
     // Exemplo — substitua ou apague quando tiver o evento real:
     {
-      id: "exemplo-reuniao-mensal",
-      tipo: "reuniao",
-      titulo: "Reunião do Ecossistema INOVACAMPOVERDE",
-      data: "2026-11-05",
-      hora: "09:00",
-      local: "CEMP / Prefeitura — Campo Verde (a confirmar)",
-      tema: "Alinhamento das ações de inovação e empreendedorismo no município",
-      publico: "Empresas, startups, instituições de ensino e órgãos públicos",
-      inscricao: "",
-      status: "a_confirmar",
-      notas: "Placeholder — atualize data, local e link quando a reunião for marcada."
-    },
-    {
       id: "exemplo-formacao",
       tipo: "formacao",
       titulo: "Formação / workshop do ecossistema (a definir)",
