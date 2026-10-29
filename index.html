@@ -154,7 +154,11 @@ header.topo:after{display:none}
 .topo h1{font-size:38px;font-weight:800;letter-spacing:-.8px}
 .topo .sub{font-weight:500;opacity:.9}
 .topo .intro{opacity:.92}
-.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,200px));gap:12px;margin-top:20px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,180px));gap:12px;margin-top:20px}
+.kpi.kpi-eco{text-decoration:none;color:#fff;display:flex;flex-direction:column;justify-content:center;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.kpi.kpi-eco:hover{transform:translateY(-2px);background:rgba(255,255,255,.24)}
+.kpi.kpi-eco b{font-size:20px;line-height:1.15;letter-spacing:-.3px}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .kpi{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px;padding:12px 16px;transition:transform .2s,background .2s}
 .kpi:hover{transform:translateY(-3px);background:rgba(255,255,255,.22)}
 .kpi b{display:block;font-size:30px;font-weight:800;line-height:1.1}
@@ -367,7 +371,6 @@ main.painel-area{margin:0;padding:0}
     <a class="acesso-card" href="editais.html"><span class="ico">📋</span><span class="nome">Editais</span><span class="desc">Chamadas e oportunidades</span></a>
     <a class="acesso-card" href="empregos.html"><span class="ico">💼</span><span class="nome">Empregos</span><span class="desc">SINE, aprendiz e estágios</span></a>
     <a class="acesso-card" href="telefones.html"><span class="ico">📞</span><span class="nome">Telefones</span><span class="desc">Secretarias, saúde, emergências</span></a>
-    <a class="acesso-card" href="ecossistema.html"><span class="ico">🌿</span><span class="nome">Ecossistema</span><span class="desc">Agenda, reuniões e formações</span></a>
     <a class="acesso-card" href="cursos-fic.html"><span class="ico">🛠️</span><span class="nome">Cursos FIC</span><span class="desc">Sistema S em Campo Verde</span></a>
     <a class="acesso-card" href="cursos-tecnicos.html"><span class="ico">🎓</span><span class="nome">Cursos técnicos</span><span class="desc">IFMT, ETEC e estaduais</span></a>
     <a class="acesso-card" href="ensino-superior.html"><span class="ico">🏫</span><span class="nome">Ensino superior</span><span class="desc">Faculdades e polos</span></a>
