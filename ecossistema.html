@@ -111,7 +111,7 @@ footer{max-width:none;width:100%;padding:0 clamp(20px,4vw,48px) 36px;font-size:1
   if(elAt) elAt.textContent = data.atualizado || "—";
 
   function fmtData(iso){
-    if(!iso) return "—";
+    if(!iso) return "Data a definir";
     var p = iso.split("-");
     if(p.length!==3) return iso;
     return p[2]+"/"+p[1]+"/"+p[0];

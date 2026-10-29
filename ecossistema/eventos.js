@@ -31,6 +31,20 @@ window.ECO_EVENTOS = {
       status: "confirmado",
       notas: "Evento fechado — somente convidados · 11/11/2026 às 19h."
     },
+    {
+      id: "lancamento-plano-acao-ecossistema",
+      tipo: "evento",
+      titulo: "Lançamento do Plano de Ação do Ecossistema",
+      data: "",
+      hora: "",
+      local: "Campo Verde-MT (a definir)",
+      tema: "Apresentação e lançamento do Plano de Ação do Ecossistema de Inovação de Campo Verde (INOVACAMPOVERDE)",
+      publico: "Ecossistema local · empresas, instituições e poder público",
+      inscricao: "",
+      status: "a_confirmar",
+      notas: "Data a definir."
+    },
+
 
     // Exemplo — substitua ou apague quando tiver o evento real:
     {
