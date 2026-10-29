@@ -5,6 +5,19 @@
 window.ECO_EVENTOS = {
   atualizado: "29/10/2026",
   agenda: [
+    {
+      id: "workshop-objetivos-2026-11-03",
+      tipo: "formacao",
+      titulo: "5º Workshop — Como alcançaremos nossos objetivos",
+      data: "2026-11-03",
+      hora: "18:00",
+      local: "Online",
+      tema: "Como alcançaremos nossos objetivos",
+      publico: "Ecossistema INOVACAMPOVERDE · Campo Verde-MT",
+      inscricao: "",
+      status: "confirmado",
+      notas: "5º workshop do ecossistema · modalidade online · 03/11/2026 às 18h."
+    },
     // Exemplo — substitua ou apague quando tiver o evento real:
     {
       id: "exemplo-reuniao-mensal",
