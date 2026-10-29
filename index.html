@@ -368,16 +368,22 @@ main.painel-area{margin:0;padding:0}
     
 <aside class="acesso" aria-label="Acesso rápido às abas">
   <h2 class="acesso-tit">Acesso rápido</h2>
+<div class="publico-bar" role="group" aria-label="Filtrar por público"><span>Sou:</span><button type="button" data-p="estudante">🎒 Estudante</button><button type="button" data-p="servidor">🏛️ Servidor público</button><button type="button" data-p="empreendedor">🚀 Empreendedor</button><button type="button" data-p="desempregado">💼 Desempregado</button><button type="button" data-p="" class="on">Todos</button></div>
+<style>.publico-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px;font-size:13px;font-weight:700;color:#5d6b76}.publico-bar button{border:1px solid #0f8a6c;background:#fff;color:#0b6b54;border-radius:999px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px}.publico-bar button.on{background:#0f8a6c;color:#fff}.acesso-card.oculto{display:none}</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var bs=document.querySelectorAll('.publico-bar button');bs.forEach(function(b){b.addEventListener('click',function(){var p=b.getAttribute('data-p');bs.forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.acesso-card').forEach(function(c){var t=(c.getAttribute('data-publico')||'');c.classList.toggle('oculto',!!p&&(' '+t+' ').indexOf(' '+p+' ')<0)});});});});</script>
   <div class="acesso-grade">
-    <a class="acesso-card" href="formacoes.html"><span class="ico">📚</span><span class="nome">Formações para gestão Pública</span><span class="desc">Cursos e capacitações</span></a>
-    <a class="acesso-card" href="editais.html"><span class="ico">📋</span><span class="nome">Editais</span><span class="desc">Chamadas e oportunidades</span></a>
-    <a class="acesso-card" href="empregos.html"><span class="ico">💼</span><span class="nome">Empregos</span><span class="desc">SINE, estágios e editais públicos</span></a>
-    <a class="acesso-card" href="telefones.html"><span class="ico">📞</span><span class="nome">Telefones</span><span class="desc">Secretarias, saúde, emergências</span></a>
-    <a class="acesso-card" href="cursos-fic.html"><span class="ico">🛠️</span><span class="nome">Cursos FIC</span><span class="desc">Sistema S em Campo Verde</span></a>
-    <a class="acesso-card" href="cursos-tecnicos.html"><span class="ico">🎓</span><span class="nome">Cursos técnicos</span><span class="desc">IFMT, ETEC e estaduais</span></a>
-    <a class="acesso-card" href="ensino-superior.html"><span class="ico">🏫</span><span class="nome">Ensino superior</span><span class="desc">Faculdades e polos</span></a>
-    <a class="acesso-card" href="#financiadores"><span class="ico">🏦</span><span class="nome">Quem financia CT&amp;I</span><span class="desc">Fontes e programas</span></a>
-    <a class="acesso-card" href="#emendas"><span class="ico">🏛️</span><span class="nome">Emendas parlamentares</span><span class="desc">Guia e orientação</span></a>
+    <a class="acesso-card" data-publico="servidor" href="formacoes.html"><span class="ico">📚</span><span class="nome">Formações para gestão Pública</span><span class="desc">Cursos e capacitações</span></a>
+    <a class="acesso-card" data-publico="servidor empreendedor" href="editais.html"><span class="ico">📋</span><span class="nome">Editais</span><span class="desc">Chamadas e oportunidades</span></a>
+    <a class="acesso-card" data-publico="desempregado estudante" href="empregos.html"><span class="ico">💼</span><span class="nome">Empregos</span><span class="desc">SINE, estágios e editais públicos</span></a>
+    <a class="acesso-card" data-publico="servidor desempregado empreendedor estudante" href="telefones.html"><span class="ico">📞</span><span class="nome">Telefones</span><span class="desc">Secretarias, saúde, emergências</span></a>
+    <a class="acesso-card" data-publico="desempregado empreendedor estudante" href="cursos-fic.html"><span class="ico">🛠️</span><span class="nome">Cursos FIC</span><span class="desc">Sistema S em Campo Verde</span></a>
+    <a class="acesso-card" data-publico="estudante desempregado" href="cursos-tecnicos.html"><span class="ico">🎓</span><span class="nome">Cursos técnicos</span><span class="desc">IFMT, ETEC e estaduais</span></a>
+    <a class="acesso-card" data-publico="estudante servidor" href="ensino-superior.html"><span class="ico">🏫</span><span class="nome">Ensino superior</span><span class="desc">Faculdades e polos</span></a>
+    <a class="acesso-card" data-publico="empreendedor servidor" href="#financiadores"><span class="ico">🏦</span><span class="nome">Quem financia CT&amp;I</span><span class="desc">Fontes e programas</span></a>
+    <a class="acesso-card" data-publico="servidor" href="#emendas"><span class="ico">🏛️</span><span class="nome">Emendas parlamentares</span><span class="desc">Guia e orientação</span></a>
+    <a class="acesso-card" data-publico="estudante" href="estagios-publicos.html"><span class="ico">🎓</span><span class="nome">Estágios públicos</span><span class="desc">IFMT, UFMT, UNEMAT, Prefeitura</span></a>
+    <a class="acesso-card" data-publico="estudante desempregado servidor" href="como-se-inscrever.html"><span class="ico">📝</span><span class="nome">Como se inscrever</span><span class="desc">SINE, IFMT, Selecon, IEL</span></a>
+    <a class="acesso-card" data-publico="estudante desempregado servidor empreendedor" href="telefones.html#contatos-oficiais"><span class="ico">⭐</span><span class="nome">Contatos oficiais</span><span class="desc">SEMCITECI, SINE, ETEC, escola</span></a>
   </div>
 </aside>
 <div class="shell-main">
