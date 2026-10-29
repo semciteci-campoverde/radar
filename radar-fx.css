@@ -215,11 +215,12 @@ header.topo .wrap {
   main { padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 32px !important; margin-top: -28px !important; }
 }
 
-/* Voltar — sempre visível acima do medidor/WhatsApp */
+/* Voltar — amarelo, acima do medidor */
+a.btn-voltar,
 .btn-voltar{
   position:fixed !important;
   right:18px !important;
-  bottom:138px !important;
+  bottom:168px !important;
   z-index:100010 !important;
   display:inline-flex !important;
   visibility:visible !important;
@@ -227,7 +228,9 @@ header.topo .wrap {
   align-items:center !important;
   gap:6px !important;
   background:#f5c518 !important;
+  background-image:none !important;
   color:#3a2e00 !important;
+  -webkit-text-fill-color:#3a2e00 !important;
   border:2px solid #fff !important;
   text-decoration:none !important;
   font:700 14px system-ui,sans-serif !important;
@@ -237,8 +240,9 @@ header.topo .wrap {
   white-space:nowrap !important;
   pointer-events:auto !important;
 }
-.btn-voltar:hover{background:#ffe566 !important;color:#3a2e00 !important;filter:brightness(1.05)}
+a.btn-voltar:hover,
+.btn-voltar:hover{background:#ffe566 !important;color:#3a2e00 !important;-webkit-text-fill-color:#3a2e00 !important}
 @media (max-width:640px){
-  .btn-voltar{right:14px !important;bottom:132px !important;font-size:13px !important;padding:10px 14px !important}
+  a.btn-voltar,.btn-voltar{right:14px !important;bottom:160px !important}
 }
 
