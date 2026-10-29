@@ -155,8 +155,9 @@ header.topo:after{display:none}
 .topo .sub{font-weight:500;opacity:.9}
 .topo .intro{opacity:.92}
 .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px;max-width:min(920px,100%);position:relative;z-index:3}
-.kpi.kpi-eco{text-decoration:none;color:#fff;display:flex;flex-direction:column;justify-content:center;cursor:pointer;transition:transform .15s ease,background .15s ease;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(242,140,40,.25)}
-.kpi.kpi-eco:hover{transform:translateY(-2px);background:rgba(255,255,255,.32)}
+.kpi.kpi-eco,.kpi.kpi-eco:link,.kpi.kpi-eco:visited{text-decoration:none;color:#fff!important;display:flex;flex-direction:column;justify-content:center;cursor:pointer;transition:transform .15s ease,background .15s ease;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(242,140,40,.25)}
+.kpi.kpi-eco:hover{transform:translateY(-2px);background:rgba(255,255,255,.32);color:#fff!important}
+.kpi.kpi-eco b,.kpi.kpi-eco span{font-size:inherit;color:#fff!important}
 .kpi.kpi-eco b{font-size:18px;line-height:1.15;letter-spacing:-.3px}
 @media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr));max-width:100%}}
 .kpi{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px;padding:12px 16px;transition:transform .2s,background .2s}
