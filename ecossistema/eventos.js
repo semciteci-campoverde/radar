@@ -1,6 +1,5 @@
-/* Agenda e galeria do Ecossistema INOVACAMPOVERDE
-   Como atualizar: acrescente um objeto em AGENDA (futuros) ou GALERIA (passados).
-   Fotos: coloque os arquivos em ecossistema/fotos/ e cite o caminho relativo, ex.: "ecossistema/fotos/workshop-01.jpg"
+/* Agenda do Ecossistema INOVACAMPOVERDE
+   Como atualizar: acrescente um objeto em AGENDA (futuros) .
 */
 window.ECO_EVENTOS = {
   atualizado: "29/10/2026",
@@ -44,17 +43,6 @@ window.ECO_EVENTOS = {
       status: "a_confirmar",
       notas: "Data a definir."
     }
-  ],
-  galeria: [
-    {
-      id: "modelo-workshop",
-      titulo: "Workshop do Ecossistema (modelo)",
-      data: "2026-10-01",
-      local: "Campo Verde-MT",
-      resumo: "Espaço reservado para o próximo workshop. Após o evento, substitua este texto e adicione as fotos em ecossistema/fotos/.",
-      fotos: [],
-      links: [],
-      rascunho: true
-    }
   ]
 };
+
