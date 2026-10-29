@@ -324,6 +324,14 @@ main.painel-area{margin:0;padding:0}
   .acesso-card .nome{font-size:13.5px}
   .acesso-card .desc{display:none}
 }
+#proximos-7-dias{max-width:1100px;margin:22px auto;padding:0 16px}
+#proximos-7-dias h2{margin:0 0 4px}
+.p7-lista{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.p7-lista li{display:grid;grid-template-columns:90px 1fr auto;gap:10px;align-items:center;background:#fff;border:1px solid #e3e7e3;border-radius:12px;padding:10px 14px}
+.p7-lista li.cv{border-left:5px solid #1f8a3b;background:#eef8f0}
+.p7-data{font-weight:800}.p7-tipo{font-size:12px;padding:2px 8px;border-radius:99px;background:#eee}
+.p7-nota{font-size:12.5px;color:#666;margin:8px 0 0}
+@media(max-width:600px){.p7-lista li{grid-template-columns:1fr}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="8f86e914-4372-4a19-87a1-45985c46d121"></script>
 <link rel="stylesheet" href="radar-fx.css?v=2">
@@ -363,6 +371,20 @@ main.painel-area{margin:0;padding:0}
     <span class="atual" id="atual" style="margin-top:18px;display:inline-block"></span>
   </div>
 </header>
+<section id="proximos-7-dias" aria-labelledby="p7-tit">
+  <h2 id="p7-tit">📅 Próximos 7 dias</h2>
+  <p style="margin:0;font-size:13.5px">Prazos, formações e eventos dos próximos 7 dias · <b>Campo Verde primeiro</b>.</p>
+  <ul class="p7-lista" id="p7Lista"></ul>
+  <p class="p7-nota">Lista atualizada junto com a agenda diária do Radar. Confira sempre o edital/página oficial.</p>
+</section>
+<script src="proximos-7-dias.js"></script>
+<script>(function(){var d=window.PROXIMOS_7_DIAS;if(!d)return;
+var hoje=new Date(new Date().toLocaleString("en-US",{timeZone:"America/Cuiaba"}));hoje.setHours(0,0,0,0);
+var fim=new Date(hoje);fim.setDate(fim.getDate()+7);var T={edital:"edital",formacao:"formação",evento:"evento"};
+var it=d.itens.filter(function(i){var x=new Date(i.data+"T00:00:00");return x>=hoje&&x<=fim;}).sort(function(a,b){return a.data<b.data?-1:a.data>b.data?1:(b.cv-a.cv);});
+var ul=document.getElementById("p7Lista");if(!it.length){ul.innerHTML="<li>Nenhum item nos próximos 7 dias.</li>";return;}
+it.forEach(function(i){var p=i.data.split("-");var li=document.createElement("li");if(i.cv)li.className="cv";
+li.innerHTML='<span class="p7-data">'+p[2]+"/"+p[1]+'</span><span><a href="'+i.link+'">'+i.titulo+"</a>"+(i.detalhe?'<br><small>'+i.detalhe+"</small>":"")+'</span><span class="p7-tipo">'+(T[i.tipo]||i.tipo)+"</span>";ul.appendChild(li);});})();</script>
 
 <div class="shell wrap">
     
