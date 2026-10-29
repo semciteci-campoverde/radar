@@ -131,7 +131,7 @@ header.topo {
   background: linear-gradient(135deg, #0f8a6c 0%, #14a37f 55%, #f2a33a 130%) !important;
   background-size: 200% 200% !important;
   color: #fff !important;
-  padding: 24px clamp(20px, 4vw, 48px) 64px !important;
+  padding: 24px 0 64px !important; /* lateral = .wrap (mesma margem da logo) */
   width: 100% !important;
   box-sizing: border-box !important;
   position: relative !important;
@@ -161,7 +161,7 @@ main {
   max-width: none !important;
   width: 100% !important;
   margin: -40px 0 0 !important;
-  padding: 0 clamp(20px, 4vw, 48px) 48px !important;
+  padding: 0 0 48px !important; /* lateral via .wrap */
   position: relative !important;
   z-index: 2 !important;
   box-sizing: border-box !important;
@@ -197,12 +197,20 @@ table { width: 100% !important; border-radius: 14px !important; overflow: hidden
 a { color: #0f8a6c !important; }
 footer {
   max-width: none !important; width: 100% !important;
-  padding: 0 clamp(20px, 4vw, 48px) 36px !important;
+  padding: 0 clamp(16px, 3vw, 28px) 36px !important;
   box-sizing: border-box !important;
 }
 .visita-flutua { background: #0f8a6c !important; }
+/* mesma margem lateral da logo em todo o Radar */
+.wrap,
+.shell.wrap,
+header.topo .wrap {
+  padding-left: clamp(16px, 3vw, 28px) !important;
+  padding-right: clamp(16px, 3vw, 28px) !important;
+  box-sizing: border-box !important;
+}
 @media (max-width: 640px) {
-  header.topo { padding: 18px 16px 52px !important; }
+  header.topo { padding: 18px 0 52px !important; }
   header.topo h1 { font-size: 20px !important; }
-  main { padding: 0 12px 32px !important; margin-top: -28px !important; }
+  main { padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 32px !important; margin-top: -28px !important; }
 }
