@@ -43,36 +43,16 @@ window.ECO_EVENTOS = {
       inscricao: "",
       status: "a_confirmar",
       notas: "Data a definir."
-    },
-
-
-    // Exemplo — substitua ou apague quando tiver o evento real:
-    {
-      id: "exemplo-formacao",
-      tipo: "formacao",
-      titulo: "Formação / workshop do ecossistema (a definir)",
-      data: "2026-11-20",
-      hora: "14:00",
-      local: "Campo Verde-MT (a confirmar)",
-      tema: "Capacitação em inovação e tecnologia para o ecossistema local",
-      publico: "Empreendedores, servidores e estudantes",
-      inscricao: "",
-      status: "a_confirmar",
-      notas: "Placeholder — troque pelo workshop real e anexe fotos na galeria depois."
     }
   ],
   galeria: [
-    // Depois do evento: copie o bloco, preencha e liste as fotos
     {
       id: "modelo-workshop",
       titulo: "Workshop do Ecossistema (modelo)",
       data: "2026-10-01",
       local: "Campo Verde-MT",
       resumo: "Espaço reservado para o próximo workshop. Após o evento, substitua este texto e adicione as fotos em ecossistema/fotos/.",
-      fotos: [
-        // "ecossistema/fotos/workshop-01.jpg",
-        // "ecossistema/fotos/workshop-02.jpg"
-      ],
+      fotos: [],
       links: [],
       rascunho: true
     }
