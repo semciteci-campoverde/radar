@@ -324,14 +324,18 @@ main.painel-area{margin:0;padding:0}
   .acesso-card .nome{font-size:13.5px}
   .acesso-card .desc{display:none}
 }
-#proximos-7-dias{max-width:1100px;margin:22px auto;padding:0 16px}
-#proximos-7-dias h2{margin:0 0 4px}
-.p7-lista{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
-.p7-lista li{display:grid;grid-template-columns:90px 1fr auto;gap:10px;align-items:center;background:#fff;border:1px solid #e3e7e3;border-radius:12px;padding:10px 14px}
-.p7-lista li.cv{border-left:5px solid #1f8a3b;background:#eef8f0}
-.p7-data{font-weight:800}.p7-tipo{font-size:12px;padding:2px 8px;border-radius:99px;background:#eee}
-.p7-nota{font-size:12.5px;color:#666;margin:8px 0 0}
-@media(max-width:600px){.p7-lista li{grid-template-columns:1fr}}
+@keyframes alertaPisca{0%,100%{background:#0f8a6c;color:#fff;border-color:#0f8a6c;box-shadow:0 0 0 0 rgba(15,138,108,.55)}50%{background:#fff;color:#0b6b54;border-color:#0f8a6c;box-shadow:0 0 0 6px rgba(15,138,108,.18)}}
+.acesso-card.alerta-pisca{animation:alertaPisca 1.4s ease-in-out infinite;border:2px solid #0f8a6c;font-weight:800;order:-1}
+.acesso-card.alerta-pisca .nome{color:inherit}.acesso-card.alerta-pisca .desc{color:inherit;opacity:.95}
+#semana{scroll-margin-top:16px;background:#fff;border:2px solid #0f8a6c;border-radius:16px;padding:14px 16px;margin:0 0 16px;display:none}
+#semana.aberto{display:block}
+#semana h3{margin:0 0 8px;color:#0b6b54;font-size:16px}
+.p7-lista{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.p7-lista li{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;padding:8px 10px;border-radius:10px;background:#f4faf6;border-left:4px solid #c5e6d2;font-size:13.5px}
+.p7-lista li.cv{border-left-color:#0f8a6c;background:#e8f6ec}
+.p7-data{font-weight:800;color:#0b6b54;min-width:42px}
+.p7-tipo{font-size:11px;padding:1px 7px;border-radius:99px;background:#d8f0e4;color:#0b6b54;font-weight:700}
+.p7-nota{font-size:12px;color:#666;margin:8px 0 0}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="8f86e914-4372-4a19-87a1-45985c46d121"></script>
 <link rel="stylesheet" href="radar-fx.css?v=2">
@@ -371,21 +375,6 @@ main.painel-area{margin:0;padding:0}
     <span class="atual" id="atual" style="margin-top:18px;display:inline-block"></span>
   </div>
 </header>
-<section id="proximos-7-dias" aria-labelledby="p7-tit">
-  <h2 id="p7-tit">📅 Próximos 7 dias</h2>
-  <p style="margin:0;font-size:13.5px">Prazos, formações e eventos dos próximos 7 dias · <b>Campo Verde primeiro</b>.</p>
-  <ul class="p7-lista" id="p7Lista"></ul>
-  <p class="p7-nota">Lista atualizada junto com a agenda diária do Radar. Confira sempre o edital/página oficial.</p>
-</section>
-<script src="proximos-7-dias.js"></script>
-<script>(function(){var d=window.PROXIMOS_7_DIAS;if(!d)return;
-var hoje=new Date(new Date().toLocaleString("en-US",{timeZone:"America/Cuiaba"}));hoje.setHours(0,0,0,0);
-var fim=new Date(hoje);fim.setDate(fim.getDate()+7);var T={edital:"edital",formacao:"formação",evento:"evento"};
-var it=d.itens.filter(function(i){var x=new Date(i.data+"T00:00:00");return x>=hoje&&x<=fim;}).sort(function(a,b){return a.data<b.data?-1:a.data>b.data?1:(b.cv-a.cv);});
-var ul=document.getElementById("p7Lista");if(!it.length){ul.innerHTML="<li>Nenhum item nos próximos 7 dias.</li>";return;}
-it.forEach(function(i){var p=i.data.split("-");var li=document.createElement("li");if(i.cv)li.className="cv";
-li.innerHTML='<span class="p7-data">'+p[2]+"/"+p[1]+'</span><span><a href="'+i.link+'">'+i.titulo+"</a>"+(i.detalhe?'<br><small>'+i.detalhe+"</small>":"")+'</span><span class="p7-tipo">'+(T[i.tipo]||i.tipo)+"</span>";ul.appendChild(li);});})();</script>
-
 <div class="shell wrap">
     
 <aside class="acesso" aria-label="Acesso rápido às abas">
@@ -393,7 +382,13 @@ li.innerHTML='<span class="p7-data">'+p[2]+"/"+p[1]+'</span><span><a href="'+i.l
 <div class="publico-bar" role="group" aria-label="Filtrar por público"><span>Sou:</span><button type="button" data-p="estudante">🎒 Estudante</button><button type="button" data-p="servidor">🏛️ Servidor público</button><button type="button" data-p="empreendedor">🚀 Empreendedor</button><button type="button" data-p="desempregado">💼 Desempregado</button><button type="button" data-p="" class="on">Todos</button></div>
 <style>.publico-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px;font-size:13px;font-weight:700;color:#5d6b76}.publico-bar button{border:1px solid #0f8a6c;background:#fff;color:#0b6b54;border-radius:999px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px}.publico-bar button.on{background:#0f8a6c;color:#fff}.acesso-card.oculto{display:none}</style>
 <script>document.addEventListener('DOMContentLoaded',function(){var bs=document.querySelectorAll('.publico-bar button');bs.forEach(function(b){b.addEventListener('click',function(){var p=b.getAttribute('data-p');bs.forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.acesso-card').forEach(function(c){var t=(c.getAttribute('data-publico')||'');c.classList.toggle('oculto',!!p&&(' '+t+' ').indexOf(' '+p+' ')<0)});});});});</script>
+  <div id="semana" aria-labelledby="semana-tit">
+    <h3 id="semana-tit">⚡ O que não pode passar · próximos 7 dias</h3>
+    <ul class="p7-lista" id="p7Lista"></ul>
+    <p class="p7-nota">Campo Verde em destaque · atualizado com a agenda diária · confira o edital oficial.</p>
+  </div>
   <div class="acesso-grade">
+    <a class="acesso-card alerta-pisca" data-publico="estudante servidor empreendedor desempregado" href="#semana" id="cardSemana"><span class="ico">⚡</span><span class="nome">Atenção · esta semana</span><span class="desc" id="cardSemanaDesc">O que acontece nos próximos 7 dias</span></a>
     <a class="acesso-card" data-publico="servidor" href="formacoes.html"><span class="ico">📚</span><span class="nome">Formações para gestão Pública</span><span class="desc">Cursos e capacitações</span></a>
     <a class="acesso-card" data-publico="servidor empreendedor" href="editais.html"><span class="ico">📋</span><span class="nome">Editais</span><span class="desc">Chamadas e oportunidades</span></a>
     <a class="acesso-card" data-publico="desempregado estudante" href="empregos.html"><span class="ico">💼</span><span class="nome">Empregos</span><span class="desc">SINE, estágios e editais públicos</span></a>
@@ -407,7 +402,26 @@ li.innerHTML='<span class="p7-data">'+p[2]+"/"+p[1]+'</span><span><a href="'+i.l
     <a class="acesso-card" data-publico="estudante desempregado servidor" href="como-se-inscrever.html"><span class="ico">📝</span><span class="nome">Como se inscrever</span><span class="desc">SINE, IFMT, Selecon, IEL</span></a>
     <a class="acesso-card" data-publico="estudante desempregado servidor empreendedor" href="telefones.html#contatos-oficiais"><span class="ico">⭐</span><span class="nome">Contatos oficiais</span><span class="desc">SEMCITECI, SINE, ETEC, escola</span></a>
   </div>
-</aside>
+</<script src="proximos-7-dias.js"></script>
+<script>(function(){
+var d=window.PROXIMOS_7_DIAS;if(!d)return;
+var hoje=new Date(new Date().toLocaleString("en-US",{timeZone:"America/Cuiaba"}));hoje.setHours(0,0,0,0);
+var fim=new Date(hoje);fim.setDate(fim.getDate()+7);
+var T={edital:"edital",formacao:"formação",evento:"evento"};
+var it=d.itens.filter(function(i){var x=new Date(i.data+"T00:00:00");return x>=hoje&&x<=fim;}).sort(function(a,b){return a.data<b.data?-1:a.data>b.data?1:(b.cv-a.cv);});
+var ul=document.getElementById("p7Lista");
+var desc=document.getElementById("cardSemanaDesc");
+if(desc){desc.textContent=it.length?(it.length+" item(ns) · toque para ver"):"Nada urgente nesta semana";}
+if(!ul)return;
+if(!it.length){ul.innerHTML="<li>Nenhum item nos próximos 7 dias.</li>";}
+else{it.forEach(function(i){var p=i.data.split("-");var li=document.createElement("li");if(i.cv)li.className="cv";
+li.innerHTML='<span class="p7-data">'+p[2]+"/"+p[1]+'</span><span class="p7-tipo">'+(T[i.tipo]||i.tipo)+'</span><span><a href="'+i.link+'">'+i.titulo+"</a>"+(i.detalhe?' · <small>'+i.detalhe+"</small>":"")+"</span>";ul.appendChild(li);});}
+function openSemana(){var s=document.getElementById("semana");if(s){s.classList.add("aberto");}}
+if(location.hash==="#semana")openSemana();
+var c=document.getElementById("cardSemana");
+if(c)c.addEventListener("click",function(){setTimeout(openSemana,0);});
+})();</script>
+aside>
 <div class="shell-main">
 <main class="painel-area">
   <div class="banner-novo" id="bannerNovo" role="status">
