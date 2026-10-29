@@ -18,6 +18,20 @@ window.ECO_EVENTOS = {
       status: "confirmado",
       notas: "5º workshop do ecossistema · modalidade online · 03/11/2026 às 18h."
     },
+    {
+      id: "digitalburguer-2026-11-11",
+      tipo: "evento",
+      titulo: "DigitalBurguer",
+      data: "2026-11-11",
+      hora: "19:00",
+      local: "Espaço Classic · Campo Verde-MT",
+      tema: "Encontro DigitalBurguer para empresas e pessoas convidadas",
+      publico: "Empresas e pessoas convidadas (evento fechado)",
+      inscricao: "",
+      status: "confirmado",
+      notas: "Evento fechado — somente convidados · 11/11/2026 às 19h."
+    },
+
     // Exemplo — substitua ou apague quando tiver o evento real:
     {
       id: "exemplo-reuniao-mensal",
