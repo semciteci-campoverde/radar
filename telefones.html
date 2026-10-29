@@ -6,18 +6,18 @@
 <title>Telefones públicos · Campo Verde – SEMCITECI</title>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="8f86e914-4372-4a19-87a1-45985c46d121"></script>
 <style>
-:root{--azul:#1f3a5f;--azul2:#2c5282;--verde:#2f7d4f;--laranja:#c05621;--cinza:#5f6b7a;--fundo:#f4f6f9;--branco:#fff;--borda:#d5dbe3;--texto:#1d2733;--ambar:#b7791f}
+:root{--azul:#0f8a6c;--azul2:#14a37f;--verde:#0f8a6c;--laranja:#f28c28;--cinza:#5d6b76;--fundo:#f6f8f7;--branco:#fff;--borda:#e3e8ec;--texto:#1f2a33;--ambar:#b7791f}
 *{box-sizing:border-box}html,body{margin:0;padding:0}
 body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--fundo);color:var(--texto);font-size:15px;line-height:1.45}
 a{color:var(--azul2)}
-header.topo{background:linear-gradient(135deg,#1f3a5f 0%,#2c5282 100%);color:#fff;padding:18px clamp(16px,3vw,36px) 16px}
+header.topo{background:linear-gradient(135deg,#0f8a6c 0%,#14a37f 55%,#f2a33a 130%);color:#fff;padding:18px clamp(16px,3vw,36px) 16px}
 header.topo h1{margin:0;font-size:22px;font-weight:600}
 header.topo .sub{margin-top:4px;font-size:13.5px;opacity:.9}
 .nav-abas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .nav-abas a{color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12)}
 .nav-abas a:hover{background:rgba(255,255,255,.22)}
-.nav-abas a.ativa{background:#fff;color:var(--azul)}
-main{max-width:none;width:100%;margin:0 auto;padding:16px clamp(16px,3vw,36px) 40px;box-sizing:border-box}
+.nav-abas a.ativa{background:#fff;color:#0b6b54}
+main{max-width:none;width:100%;margin:-40px auto 0;padding:0 clamp(20px,4vw,48px) 48px;box-sizing:border-box;position:relative;z-index:2}
 .aviso{background:#fff8e6;border:1px solid #ecc98b;border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:14px;color:#7a5210}
 .intro{background:var(--branco);border:1px solid var(--borda);border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:14px;color:var(--cinza)}
 .bloco{margin-bottom:22px}
@@ -37,7 +37,7 @@ th{background:#eef2f7;font-size:12px;text-transform:uppercase;color:var(--cinza)
 td.num{text-align:right;font-weight:700;white-space:nowrap}
 footer{max-width:none;width:100%;margin:0 auto;padding:0 clamp(16px,3vw,36px) 30px;font-size:12.5px;color:var(--cinza);box-sizing:border-box}
 .flutuantes{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.visita-flutua{display:inline-flex;align-items:center;gap:6px;background:#1f3a5f;color:#fff;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:12.5px;font-weight:600;box-shadow:0 8px 24px rgba(31,58,95,.35)}
+.visita-flutua{display:inline-flex;align-items:center;gap:6px;background:#0f8a6c;color:#fff;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:12.5px;font-weight:600;box-shadow:0 8px 24px rgba(31,58,95,.35)}
 .visita-flutua .n{font-size:15px;font-weight:800;color:#f5c518}
 .visita-flutua .rot{opacity:.92;font-weight:500;font-size:11.5px;line-height:1.2}
 .zap-flutua{width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(18,140,70,.45);text-decoration:none}
@@ -67,7 +67,7 @@ table{width:100%!important}
 body{font-size:16px!important;background:#f6f8f7!important}
 
 </style>
-<link rel="stylesheet" href="radar-fx.css">
+<link rel="stylesheet" href="radar-fx.css?v=2">
 </head>
 <body>
 <header class="topo">
@@ -102,6 +102,6 @@ body{font-size:16px!important;background:#f6f8f7!important}
   if(el){ fetch(BASE+'/share/'+SHARE).then(function(r){return r.json();}).then(function(s){return fetch(BASE+'/websites/'+WID+'/stats?startAt=0&endAt='+Date.now(),{headers:{'x-umami-share-token':s.token,'x-umami-share-context':SHARE}}).then(function(r){return r.json();});}).then(function(st){if(st&&st.visitors!=null)el.textContent=Number(st.visitors).toLocaleString('pt-BR');}).catch(function(){}); }
 })();
 </script>
-<script defer src="radar-fx.js"></script>
+<script defer src="radar-fx.js?v=2"></script>
 </body>
 </html>

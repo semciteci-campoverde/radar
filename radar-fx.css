@@ -111,3 +111,98 @@ body.radar-enter .painel {
   }
   #radar-fx-overlay { display: none !important; }
 }
+
+
+/* === Tema unificado das abas (igual à inicial) === */
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+body {
+  --azul: #0f8a6c !important;
+  --azul2: #14a37f !important;
+  --verde: #0f8a6c !important;
+  --laranja: #f28c28 !important;
+  --cinza: #5d6b76 !important;
+  --fundo: #f6f8f7 !important;
+  --borda: #e3e8ec !important;
+  --texto: #1f2a33 !important;
+  background: #f6f8f7 !important;
+  font-size: 16px !important;
+}
+header.topo {
+  background: linear-gradient(135deg, #0f8a6c 0%, #14a37f 55%, #f2a33a 130%) !important;
+  background-size: 200% 200% !important;
+  color: #fff !important;
+  padding: 24px clamp(20px, 4vw, 48px) 64px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+header.topo:after {
+  content: "" !important;
+  position: absolute !important;
+  right: -60px !important; top: -60px !important;
+  width: 260px !important; height: 260px !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.1) !important;
+  pointer-events: none !important;
+}
+header.topo h1 { margin: 0 !important; font-size: clamp(22px, 2.4vw, 30px) !important; font-weight: 700 !important; letter-spacing: -.3px !important; }
+header.topo .sub { margin-top: 6px !important; font-size: 15px !important; opacity: .95 !important; }
+.nav-abas { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; margin-top: 14px !important; }
+.nav-abas a {
+  color: #fff !important; text-decoration: none !important; font-size: 13px !important; font-weight: 600 !important;
+  padding: 7px 14px !important; border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,.42) !important; background: rgba(255,255,255,.16) !important;
+}
+.nav-abas a:hover { background: rgba(255,255,255,.28) !important; }
+.nav-abas a.ativa { background: #fff !important; color: #0b6b54 !important; border-color: #fff !important; }
+
+main {
+  max-width: none !important;
+  width: 100% !important;
+  margin: -40px 0 0 !important;
+  padding: 0 clamp(20px, 4vw, 48px) 48px !important;
+  position: relative !important;
+  z-index: 2 !important;
+  box-sizing: border-box !important;
+}
+main > .aviso,
+main > .intro,
+main > .bloco,
+main > section.bloco {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  background: rgba(255,255,255,.96) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.75) !important;
+  box-shadow: 0 12px 32px rgba(20,60,40,.12) !important;
+  border-radius: 18px !important;
+  padding: 18px 22px !important;
+  margin-bottom: 16px !important;
+}
+main > .aviso { background: #fff8e6 !important; border-color: #ecc98b !important; }
+main > .bloco h2 { margin: 0 0 12px !important; color: #0b6b54 !important; font-size: 18px !important; }
+.card {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  border-radius: 14px !important;
+  border-left-width: 6px !important;
+}
+.card h3 { color: #0b6b54 !important; }
+table { width: 100% !important; border-radius: 14px !important; overflow: hidden !important; }
+.selo.n, .selo.ok { background: #e6f6f1 !important; border-color: #9ad9c4 !important; color: #0b6b54 !important; }
+a { color: #0f8a6c !important; }
+footer {
+  max-width: none !important; width: 100% !important;
+  padding: 0 clamp(20px, 4vw, 48px) 36px !important;
+  box-sizing: border-box !important;
+}
+.visita-flutua { background: #0f8a6c !important; }
+@media (max-width: 640px) {
+  header.topo { padding: 18px 16px 52px !important; }
+  header.topo h1 { font-size: 20px !important; }
+  main { padding: 0 12px 32px !important; margin-top: -28px !important; }
+}
