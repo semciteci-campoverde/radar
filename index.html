@@ -20,10 +20,10 @@ body{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(-
 a{color:var(--verde-esc)}
 header.topo{background:linear-gradient(135deg,#0f8a6c 0%,#14a37f 55%,#f2a33a 130%);color:#fff;padding:28px 20px 70px;position:relative;overflow:hidden}
 header.topo:after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08)}
-.wrap{max-width:1180px;margin:0 auto}
+.wrap{max-width:min(1420px,96vw);margin:0 auto;padding-left:16px;padding-right:16px}
 .topo h1{margin:0;font-size:30px;line-height:1.15;letter-spacing:-.3px}
 .topo .sub{margin:6px 0 0;font-size:15px;opacity:.95}
-.topo .intro{margin:14px 0 0;max-width:760px;font-size:15.5px;opacity:.97}
+.topo .intro{margin:14px 0 0;max-width:min(980px,100%);font-size:16px;opacity:.97}
 .topo .atual{display:inline-block;margin-top:12px;background:rgba(255,255,255,.18);border-radius:999px;padding:4px 12px;font-size:13px}
 main.wrap{margin-top:-48px;padding:0 14px 30px;position:relative}
 .banner-novo{display:none;align-items:center;gap:12px;background:linear-gradient(90deg,#ff7a18,#d6338a);color:#fff;border-radius:var(--raio);padding:14px 18px;margin-bottom:14px;box-shadow:0 6px 20px rgba(214,51,138,.25);font-weight:600}
@@ -50,7 +50,7 @@ select{border:1.5px solid var(--borda);border-radius:10px;padding:9px 10px;font-
 .linha-opcoes label{display:flex;align-items:center;gap:6px;cursor:pointer}
 .btn-limpar{background:none;border:0;color:var(--verde-esc);text-decoration:underline;cursor:pointer;font-size:14px;font-family:inherit}
 .resumo{margin:16px 2px 10px;color:var(--suave);font-size:14.5px}
-.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
 .card{background:#fff;border-radius:var(--raio);box-shadow:0 3px 14px rgba(16,40,32,.07);padding:16px 16px 12px;display:flex;flex-direction:column;border-top:5px solid var(--cor,#0f8a6c);position:relative}
 .card.encerrado{opacity:.62}
 .card .topo-card{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
@@ -88,7 +88,7 @@ select{border:1.5px solid var(--borda);border-radius:10px;padding:9px 10px;font-
 .verif{margin-top:10px;font-size:12.5px;color:var(--suave);border-top:1px solid var(--borda);padding-top:8px}
 .verif a{color:var(--suave)}
 .vazio{background:#fff;border-radius:var(--raio);padding:30px;text-align:center;color:var(--suave)}
-footer{max-width:1180px;margin:10px auto 30px;padding:0 16px;color:var(--suave);font-size:13.5px}
+footer{max-width:min(1420px,96vw);margin:10px auto 30px;padding:0 16px;color:var(--suave);font-size:13.5px}
 footer .aviso{background:var(--laranja-claro);border-left:4px solid var(--laranja);border-radius:10px;padding:10px 14px;color:#6b4513;margin-bottom:10px}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(40px);background:#183a30;color:#fff;padding:12px 18px;border-radius:12px;font-size:15px;opacity:0;transition:all .25s;z-index:50;max-width:90vw;text-align:center;pointer-events:none}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -226,7 +226,7 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
 .radar-varre{transform-origin:160px 150px;animation:gira 6s linear infinite}
 @keyframes gira{to{transform:rotate(360deg)}}
 .pisca-pt{animation:pisca 2.4s ease-in-out infinite}
-.hero h1,.hero .sub,.hero .intro{max-width:calc(100% - 320px)}
+.hero h1,.hero .sub,.hero .intro{max-width:min(980px,calc(100% - 280px))}
 /* cards */
 .card{padding:0;overflow:hidden;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease,box-shadow .2s}
 .card.vis{opacity:1;transform:none}
@@ -300,16 +300,25 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
 .proposito-eco p{margin:0;font-size:15.5px;line-height:1.45;font-weight:600;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.2)}
 @media (max-width:640px){.proposito-eco{padding:12px 14px}.proposito-eco p{font-size:14.5px}}
 
-/* atalhos laterais elegantes */
-.pills{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
-.pills-tit{display:none}
-.pills .atalho{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.55)!important;color:#fff!important;font-weight:600;font-size:14px;padding:8px 14px;border-radius:10px;box-shadow:none;backdrop-filter:blur(6px)}
-.pills .atalho:hover{background:rgba(255,255,255,.24)!important;transform:none;box-shadow:none}
-@media (min-width:1280px){
-  .pills{position:fixed;left:16px;top:50%;transform:translateY(-50%);z-index:55;flex-direction:column;flex-wrap:nowrap;gap:2px;width:190px;margin:0;padding:12px 8px;background:rgba(255,255,255,.96);border:1px solid #e3e8ec;border-radius:14px;box-shadow:0 8px 28px rgba(16,40,32,.12)}
-  .pills-tit{display:block;font-size:10.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#7a8791;padding:2px 10px 8px;border-bottom:1px solid #eef1f3;margin-bottom:4px}
-  .pills .atalho{background:transparent!important;border:0!important;border-left:2px solid transparent!important;border-radius:6px;color:#2b3a44!important;font-size:13.5px;font-weight:500;padding:8px 10px;backdrop-filter:none}
-  .pills .atalho:hover{background:#f3f6f4!important;border-left-color:#2e8b1e!important;color:#14532d!important}
+/* layout uniforme: atalhos + conteúdo */
+.shell{display:grid;grid-template-columns:1fr;gap:16px;align-items:start;margin-top:-48px;position:relative;z-index:2;padding-bottom:24px}
+.shell-main{min-width:0}
+main.painel-area{margin:0;padding:0}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:12px 14px;background:rgba(255,255,255,.94);border:1px solid #e3e8ec;border-radius:16px;box-shadow:0 6px 20px rgba(16,40,32,.08)}
+.pills-tit{display:block;width:100%;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#7a8791;margin-bottom:2px}
+.pills .atalho{background:#f7f9f8!important;border:1px solid #e3e8ec!important;color:#2b3a44!important;font-weight:600;font-size:13.5px;padding:8px 12px;border-radius:10px;box-shadow:none;backdrop-filter:none}
+.pills .atalho:hover{background:#eef5f1!important;border-color:#b9d9c8!important;color:#14532d!important;transform:none;box-shadow:none}
+@media (min-width:1100px){
+  .shell{grid-template-columns:220px minmax(0,1fr);gap:20px;margin-top:-56px}
+  .pills{position:sticky;top:18px;flex-direction:column;flex-wrap:nowrap;gap:2px;padding:14px 10px}
+  .pills-tit{padding:0 8px 8px;border-bottom:1px solid #eef1f3;margin-bottom:6px}
+  .pills .atalho{background:transparent!important;border:0!important;border-left:2px solid transparent!important;border-radius:8px;font-weight:500;padding:9px 10px;text-align:left}
+  .pills .atalho:hover{background:#f3f6f4!important;border-left-color:#2e8b1e!important}
+}
+@media (max-width:640px){
+  .shell{margin-top:-40px;gap:12px}
+  .pills{padding:10px}
+  .pills .atalho{font-size:13px;padding:7px 10px}
 }
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="8f86e914-4372-4a19-87a1-45985c46d121"></script>
@@ -346,6 +355,10 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
     </div>
     <div class="cta-linha"><a class="btn-zap btn-zap-hero" href="https://wa.me/556692629903?text=Ol%C3%A1%2C%20vim%20pelo%20Radar%20de%20Oportunidades%20e%20gostaria%20de%20falar%20com%20a%20SEMCITECI." target="_blank" rel="noopener"><svg class="ico-wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.7 6.5 1.7 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.9 1.3 1.3-3.8-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1C4.9 9.6 9.9 4.7 16 4.7s11.1 5 11.1 11.1S22.1 26.2 16 26.2zm6.1-8.3c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1-2.5c-.3-.7-.5-.6-.8-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg><span>Fale com a SEMCITECI</span></a></div>
     <span class="atual" id="atual" style="margin-top:18px;display:inline-block"></span>
+  </div>
+</header>
+
+<div class="shell wrap">
     <nav class="pills" aria-label="Atalhos do Radar">
     <span class="pills-tit">Navegue</span>
     <a class="atual atalho pill-formacoes" href="formacoes.html">📚 Formações para gestão Pública</a>
@@ -357,10 +370,8 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
     <a class="atual atalho pill-financia" href="#financiadores">🏦 Quem financia CT&amp;I</a>
     <a class="atual atalho pill-emendas" href="#emendas">🏛️ Emendas parlamentares</a>
     </nav>
-  </div>
-</header>
-
-<main class="wrap">
+<div class="shell-main">
+<main class="painel-area">
   <div class="banner-novo" id="bannerNovo" role="status">
     <span class="sino">🔔</span><span id="bannerTxt"></span>
     <button type="button" id="verNovos">Ver novidades</button>
@@ -503,6 +514,9 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
     <p class="fin-nota">Datas conferidas em 14/10/2026. Onde está “a confirmar” ou “não informado”, a data oficial ainda não foi publicada: confirme sempre com o gabinete do parlamentar e nos sites oficiais (Congresso, ALMT, Transferegov).</p>
   </section>
 </main>
+</div><!-- /.shell-main -->
+</div><!-- /.shell -->
+
 
 <footer>
   <div class="aviso">⚠️ As informações foram conferidas nas páginas oficiais na data indicada em cada oportunidade. Prazos e regras podem mudar: confirme sempre na página oficial antes de se inscrever. A Prefeitura não faz inscrições em nome de ninguém.</div>
