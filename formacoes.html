@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formações e eventos CT&amp;I – SEMCITECI Campo Verde</title>
+<style>
+:root{
+  --azul:#1f3a5f; --azul2:#2c5282; --verde:#2f7d4f; --laranja:#c05621; --vermelho:#b42318;
+  --cinza:#5f6b7a; --cinza2:#e6e9ee; --fundo:#f4f6f9; --branco:#fff; --ambar:#b7791f;
+  --borda:#d5dbe3; --texto:#1d2733;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--fundo);color:var(--texto);font-size:15px;line-height:1.45}
+a{color:var(--azul2)}
+header.topo{background:linear-gradient(135deg,#1f3a5f 0%,#2c5282 100%);color:#fff;padding:18px 28px 16px}
+header.topo h1{margin:0;font-size:22px;font-weight:600}
+header.topo .sub{margin-top:4px;font-size:13.5px;opacity:.9}
+.nav-abas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.nav-abas a{color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12)}
+.nav-abas a:hover{background:rgba(255,255,255,.22)}
+.nav-abas a.ativa{background:#fff;color:var(--azul)}
+main{max-width:980px;margin:0 auto;padding:16px 20px 40px}
+.intro{background:var(--branco);border:1px solid var(--borda);border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:14px;color:var(--cinza)}
+.intro b{color:var(--texto)}
+.filtros{background:var(--branco);border:1px solid var(--borda);border-radius:10px;padding:12px 14px;margin-bottom:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{border:1.5px solid var(--borda);background:#fff;border-radius:999px;padding:6px 12px;font-size:13.5px;cursor:pointer;font-family:inherit}
+.chip.ativo{background:var(--verde);border-color:var(--verde);color:#fff}
+.bloco{margin-bottom:22px}
+.bloco h2{margin:0 0 10px;font-size:17px;color:var(--azul);display:flex;align-items:center;gap:8px}
+.card{background:var(--branco);border:1px solid var(--borda);border-radius:10px;padding:14px 16px;margin-bottom:10px;border-left:6px solid var(--azul2)}
+.card.mt{border-left-color:var(--verde)}
+.card.online{border-left-color:#6b46c1}
+.card.pago{border-left-color:var(--laranja)}
+.card h3{margin:0 0 6px;font-size:16px;color:var(--azul)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px 14px;font-size:13.5px;margin:8px 0}
+.meta .r{font-size:11px;text-transform:uppercase;letter-spacing:.3px;color:var(--cinza)}
+.selo{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--borda);background:#f7f9fb;margin-right:4px}
+.selo.gratis{background:#e7f4ec;border-color:#a7d3b8;color:#1f5e3a}
+.selo.pago{background:#fdf3e1;border-color:#ecc98b;color:#7a5210}
+.selo.prazo{background:#e6eef9;border-color:#a9c1e6;color:#1f3a7a}
+.links a{display:inline-block;margin-top:6px;margin-right:10px;font-weight:600;font-size:14px}
+footer{max-width:980px;margin:0 auto;padding:0 20px 30px;font-size:12.5px;color:var(--cinza)}
+.vazio{padding:20px;text-align:center;color:var(--cinza)}
+@media (max-width:640px){header.topo{padding:14px 16px} header.topo h1{font-size:18px}}
+</style>
+</head>
+<body>
+<header class="topo">
+  <h1>📚 Formações e eventos CT&amp;I</h1>
+  <div class="sub">SEMCITECI · Prefeitura de Campo Verde-MT · Agenda priorizada para a administração pública · Atualizado: <b id="dt">–</b></div>
+  <nav class="nav-abas" aria-label="Abas do Radar">
+    <a href="index.html">🔎 Radar</a>
+    <a href="editais.html">📋 Editais</a>
+    <a class="ativa" href="formacoes.html">📚 Formações</a>
+  </nav>
+</header>
+<main>
+  <p class="intro">Agenda diária de <b>cursos, formações e eventos</b> em Ciência, Tecnologia e Inovação, com foco em administração pública, formação de profissionais e inteligência artificial. Prioridade: prazos com mais antecedência (no setor público tudo precisa ser planejado). Sempre confira o link oficial de inscrição.</p>
+  <div class="filtros" id="filtros" aria-label="Filtros por bloco"></div>
+  <div id="lista"></div>
+</main>
+<footer>
+  Monitoramento SEMCITECI · Campo Verde-MT · Links oficiais; valores e gratuidade sujeitos a confirmação na fonte.
+</footer>
+<script id="dados" type="application/json">
+{
+  "meta": {
+    "atualizacao": "2026-10-29",
+    "atualizacao_hora": "08:00",
+    "titulo": "Formações e eventos CT&I – SEMCITECI"
+  },
+  "itens": [
+    {
+      "id": "mt-disrupcao-rondonopolis",
+      "bloco": "mt",
+      "titulo": "Disrupção em Ação",
+      "org": "Sebrae/MT (Serviço Brasileiro de Apoio às Micro e Pequenas Empresas)",
+      "local": "Rondonópolis-MT · Millenium Centro de Convenções (~130 km de Campo Verde)",
+      "quando": "10/11/2026 · 14h–20h30",
+      "duracao": "1 tarde (~6h30)",
+      "tematica": "Inovação, pitch de startups e captação Finep (Financiadora de Estudos e Projetos)",
+      "custo": "gratuito",
+      "prazo": "Cadastro prévio na loja Sebrae/MT",
+      "link": "https://mt.loja.sebrae.com.br",
+      "fonte": "https://opovomt.com.br/sebrae-realiza-evento-gratuito-em-rondonopolis-para-impulsionar-pequenos-negocios-e-conectar-empreendedores/"
+    },
+    {
+      "id": "mt-simt-nova-mutum",
+      "bloco": "mt",
+      "titulo": "SIMT 2026 – Semana da Inovação de Mato Grosso",
+      "org": "Organização local · Nova Mutum",
+      "local": "Nova Mutum-MT (~370 km de Campo Verde)",
+      "quando": "05–07/11/2026",
+      "duracao": "3 dias (a partir das 18h)",
+      "tematica": "Agroindústria, logística, inteligência artificial e governo",
+      "custo": "a confirmar",
+      "prazo": "Inscrições abertas no site",
+      "link": "https://semanainovacaomt.com.br/"
+    },
+    {
+      "id": "mt-inova-senai-cuiaba",
+      "bloco": "mt",
+      "titulo": "Inova Senai MT",
+      "org": "Senai (Serviço Nacional de Aprendizagem Industrial) · UniSenai Cuiabá",
+      "local": "Cuiabá-MT (~130 km de Campo Verde)",
+      "quando": "11–12/11/2026",
+      "duracao": "2 dias",
+      "tematica": "Inovação na indústria",
+      "custo": "pago (valores no Sympla)",
+      "prazo": "Inscrições no Sympla",
+      "link": "https://www.sympla.com.br/evento/inova-senai-nacional-em-mato-grosso/3600859"
+    },
+    {
+      "id": "mt-expominerio",
+      "bloco": "mt",
+      "titulo": "Expominério 2026",
+      "org": "Expominério",
+      "local": "Cuiabá-MT · Centro de Eventos do Pantanal",
+      "quando": "25–27/11/2026",
+      "duracao": "3 dias",
+      "tematica": "Mineração e tecnologia (há palestras gratuitas)",
+      "custo": "misto (palestras gratuitas)",
+      "prazo": "Inscrições no site oficial",
+      "link": "https://www.expominerio.com.br/"
+    },
+    {
+      "id": "mt-meetup-carbono-lucas",
+      "bloco": "mt",
+      "titulo": "Meetup Do Campo ao Crédito de Carbono",
+      "org": "Sebrae · Circuito de Inovação",
+      "local": "Lucas do Rio Verde-MT · Unilasalle (~460 km)",
+      "quando": "05/11/2026 · 19h–21h",
+      "duracao": "2 horas",
+      "tematica": "Agronegócio, inovação e crédito de carbono",
+      "custo": "gratuito",
+      "prazo": "Inscrição na loja Sebrae/MT",
+      "link": "https://mt.loja.sebrae.com.br/meetup-circuito-de-inovac-o-do-campo-ao-credito-de-carbono-ev-960428"
+    },
+    {
+      "id": "nac-serpro-ia",
+      "bloco": "nacional",
+      "titulo": "Semana de IA Serpro",
+      "org": "Serpro (Serviço Federal de Processamento de Dados)",
+      "local": "Brasília-DF + online",
+      "quando": "04–06/11/2026",
+      "duracao": "3 dias",
+      "tematica": "Inteligência artificial no setor público",
+      "custo": "gratuito (100 vagas presenciais)",
+      "prazo": "Inscrições na campanha Serpro",
+      "link": "https://campanhas.serpro.gov.br/semana-de-ia-serpro/"
+    },
+    {
+      "id": "nac-semana-inovacao-enap",
+      "bloco": "nacional",
+      "titulo": "Semana de Inovação Enap",
+      "org": "Enap (Escola Nacional de Administração Pública)",
+      "local": "Brasília-DF + online",
+      "quando": "10–12/11/2026",
+      "duracao": "3 dias",
+      "tematica": "Inovação no serviço público",
+      "custo": "gratuito",
+      "prazo": "Inscrições no site da Semana",
+      "link": "https://semanadeinovacao.enap.gov.br/"
+    },
+    {
+      "id": "nac-semana-dados-br",
+      "bloco": "nacional",
+      "titulo": "Semana Dados BR",
+      "org": "Enap (Escola Nacional de Administração Pública)",
+      "local": "Brasília-DF",
+      "quando": "23–26/11/2026",
+      "duracao": "4 dias",
+      "tematica": "Dados e inteligência artificial no governo",
+      "custo": "gratuito",
+      "prazo": "Inscrições no InovaGov/Enap",
+      "link": "https://inovagov.enap.gov.br/events/show/205"
+    },
+    {
+      "id": "sul-hackathon-cidades",
+      "bloco": "sul",
+      "titulo": "Hackathon Cidades Sábias + CONIPC Brasil",
+      "org": "CONIPC / Cidades Sábias",
+      "local": "Canoas-RS",
+      "quando": "25–26/11/2026",
+      "duracao": "2 dias",
+      "tematica": "Inovação urbana e cidades inteligentes",
+      "custo": "a confirmar",
+      "prazo": "Inscrição do hackathon até 16/11/2026",
+      "link": "https://www.sympla.com.br/evento/hackathon-cidades-sabias/3608159"
+    },
+    {
+      "id": "sul-serpro-day-fln",
+      "bloco": "sul",
+      "titulo": "Serpro Day Grande Florianópolis",
+      "org": "Serpro",
+      "local": "Grande Florianópolis-SC",
+      "quando": "19/11/2026",
+      "duracao": "1 dia",
+      "tematica": "Tecnologia e soluções digitais do Serpro",
+      "custo": "a confirmar",
+      "prazo": "Inscrições na loja Serpro",
+      "link": "https://loja.serpro.gov.br/serproday2026-florianopolis"
+    },
+    {
+      "id": "sul-inovar-sc",
+      "bloco": "sul",
+      "titulo": "INOVAR SC 2026 (13ª edição)",
+      "org": "ACATE / TJSC",
+      "local": "Florianópolis-SC",
+      "quando": "26–27/11/2026",
+      "duracao": "2 dias",
+      "tematica": "Inovação e tecnologia em Santa Catarina",
+      "custo": "gratuito (vagas limitadas)",
+      "prazo": "Inscrições no Sympla",
+      "link": "https://www.sympla.com.br/evento/inovar-sc-2026-13a-edicao/3255530"
+    },
+    {
+      "id": "sul-compras-publicas-curitiba",
+      "bloco": "sul",
+      "titulo": "Encontro Compras Públicas de Inovação",
+      "org": "Hub GovTech PR / Politiza Brasil",
+      "local": "Curitiba-PR · Hub GovTech",
+      "quando": "30/11 ou 01/12/2026 (confirmar na fonte)",
+      "duracao": "1 dia",
+      "tematica": "Compras públicas de inovação para prefeituras e órgãos",
+      "custo": "gratuito",
+      "prazo": "Inscrições abertas",
+      "link": "https://politizabrasil.com.br/curitiba-inscricoes-encontro-compras-publicas-inovacao/"
+    },
+    {
+      "id": "se-techcity-sorocaba",
+      "bloco": "sudeste",
+      "titulo": "TechCity Summit",
+      "org": "Parque Tecnológico de Sorocaba",
+      "local": "Sorocaba-SP · Parque Tecnológico",
+      "quando": "04–05/11/2026",
+      "duracao": "2 dias",
+      "tematica": "Cidades inteligentes e inovação tecnológica",
+      "custo": "a confirmar",
+      "prazo": "Inscrições no site do evento",
+      "link": "https://www.techcity.events/"
+    },
+    {
+      "id": "se-infracidades",
+      "bloco": "sudeste",
+      "titulo": "InfraCidades 2026",
+      "org": "SP Parcerias / FGV EAESP",
+      "local": "São Paulo-SP · FGV EAESP (híbrido)",
+      "quando": "19/11/2026",
+      "duracao": "1 dia",
+      "tematica": "Infraestrutura e cidades",
+      "custo": "gratuito",
+      "prazo": "Inscrições no site SP Parcerias",
+      "link": "https://www.spparcerias.com.br/infracidades-2026"
+    },
+    {
+      "id": "on-enap-agentes-ia",
+      "bloco": "online",
+      "titulo": "Agentes de IA na Prática do Serviço Público",
+      "org": "Enap (Escola Nacional de Administração Pública)",
+      "local": "Online",
+      "quando": "16/11 a 02/12/2026",
+      "duracao": "30 horas",
+      "tematica": "Agentes de inteligência artificial no serviço público",
+      "custo": "gratuito",
+      "prazo": "Inscrição até 12/11/2026 (prioridade servidores federais)",
+      "link": "https://suap.enap.gov.br/vitrine/curso/3224/"
+    },
+    {
+      "id": "on-evg-fundamentos-ia",
+      "bloco": "online",
+      "titulo": "Fundamentos da IA no Serviço Público",
+      "org": "Escola Virtual.gov",
+      "local": "Online",
+      "quando": "fluxo contínuo",
+      "duracao": "1 hora",
+      "tematica": "Fundamentos de inteligência artificial no serviço público",
+      "custo": "gratuito",
+      "prazo": "Inscrição aberta (contínuo)",
+      "link": "https://www.escolavirtual.gov.br/curso/1559"
+    },
+    {
+      "id": "pago-smart-city-curitiba",
+      "bloco": "pagos",
+      "titulo": "Smart City Expo Curitiba 2027",
+      "org": "Smart City Expo",
+      "local": "Curitiba-PR",
+      "quando": "17–19/03/2027",
+      "duracao": "3 dias",
+      "tematica": "Cidades inteligentes (planejamento antecipado)",
+      "custo": "pago",
+      "prazo": "Acompanhar site oficial",
+      "link": "https://smartcityexpocuritiba.com/"
+    },
+    {
+      "id": "pago-websummit-rio",
+      "bloco": "pagos",
+      "titulo": "Web Summit Rio 2027",
+      "org": "Web Summit",
+      "local": "Rio de Janeiro-RJ · Riocentro",
+      "quando": "14–17/06/2027",
+      "duracao": "4 dias",
+      "tematica": "Tecnologia, startups e inovação (planejamento antecipado)",
+      "custo": "pago",
+      "prazo": "Ingressos no site oficial",
+      "link": "https://rio.websummit.com/pt-br/tickets/"
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  var DADOS = JSON.parse(document.getElementById('dados').textContent);
+  var BLOCOS = [
+    {id:'mt', rotulo:'🌾 Mato Grosso'},
+    {id:'nacional', rotulo:'🇧🇷 Nacionais'},
+    {id:'sul', rotulo:'Sul'},
+    {id:'sudeste', rotulo:'Sudeste'},
+    {id:'online', rotulo:'🌐 Online'},
+    {id:'pagos', rotulo:'💼 Grandes pagos'}
+  ];
+  var filtro = 'todos';
+  var meta = DADOS.meta || {};
+  document.getElementById('dt').textContent = (meta.atualizacao || '–') + (meta.atualizacao_hora ? ' · ' + meta.atualizacao_hora + ' (Cuiabá)' : '');
+
+  var filtros = document.getElementById('filtros');
+  function pintarFiltros(){
+    filtros.innerHTML = '';
+    var todos = document.createElement('button');
+    todos.type = 'button';
+    todos.className = 'chip' + (filtro==='todos'?' ativo':'');
+    todos.textContent = 'Todos';
+    todos.onclick = function(){ filtro='todos'; render(); };
+    filtros.appendChild(todos);
+    BLOCOS.forEach(function(b){
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chip' + (filtro===b.id?' ativo':'');
+      btn.textContent = b.rotulo;
+      btn.onclick = function(){ filtro=b.id; render(); };
+      filtros.appendChild(btn);
+    });
+  }
+
+  function classeCard(bloco, custo){
+    if (bloco==='mt') return 'card mt';
+    if (bloco==='online') return 'card online';
+    if (bloco==='pagos' || (custo||'').indexOf('pago')===0) return 'card pago';
+    return 'card';
+  }
+
+  function seloCusto(c){
+    c = (c||'').toLowerCase();
+    if (c.indexOf('gratuit')>=0) return '<span class="selo gratis">gratuito</span>';
+    if (c.indexOf('pago')>=0) return '<span class="selo pago">pago</span>';
+    return '<span class="selo">'+esc(c||'a confirmar')+'</span>';
+  }
+
+  function esc(s){
+    return String(s==null?'':s).replace(/[&<>"']/g, function(ch){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch];
+    });
+  }
+
+  function cardHtml(it){
+    var links = '';
+    if (it.link) links += '<a href="'+esc(it.link)+'" target="_blank" rel="noopener noreferrer">Inscrição / site ↗</a>';
+    if (it.fonte) links += '<a href="'+esc(it.fonte)+'" target="_blank" rel="noopener noreferrer">Fonte ↗</a>';
+    return '<article class="'+classeCard(it.bloco, it.custo)+'">'+
+      '<h3>'+esc(it.titulo)+'</h3>'+
+      '<div>'+seloCusto(it.custo)+(it.prazo?' <span class="selo prazo">'+esc(it.prazo)+'</span>':'')+'</div>'+
+      '<div class="meta">'+
+        '<div><div class="r">Onde</div>'+esc(it.local||'–')+'</div>'+
+        '<div><div class="r">Quando</div>'+esc(it.quando||'–')+'</div>'+
+        '<div><div class="r">Duração</div>'+esc(it.duracao||'–')+'</div>'+
+        '<div><div class="r">Organizador</div>'+esc(it.org||'–')+'</div>'+
+      '</div>'+
+      '<div><div class="r" style="font-size:11px;text-transform:uppercase;color:var(--cinza)">Temática</div>'+esc(it.tematica||'–')+'</div>'+
+      '<div class="links">'+links+'</div>'+
+    '</article>';
+  }
+
+  function render(){
+    pintarFiltros();
+    var lista = document.getElementById('lista');
+    var itens = DADOS.itens || [];
+    var html = '';
+    var algum = false;
+    BLOCOS.forEach(function(b){
+      if (filtro!=='todos' && filtro!==b.id) return;
+      var doBloco = itens.filter(function(it){ return it.bloco===b.id; });
+      if (!doBloco.length) return;
+      algum = true;
+      html += '<section class="bloco"><h2>'+esc(b.rotulo)+'</h2>';
+      doBloco.forEach(function(it){ html += cardHtml(it); });
+      html += '</section>';
+    });
+    lista.innerHTML = algum ? html : '<p class="vazio">Nenhuma oportunidade neste filtro.</p>';
+  }
+  render();
+})();
+</script>
+</body>
+</html>
