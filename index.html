@@ -330,6 +330,7 @@ main.painel-area{margin:0;padding:0}
 #semana{scroll-margin-top:16px;background:#fff;border:2px solid #0f8a6c;border-radius:16px;padding:14px 16px;margin:12px 0 0;display:none}
 #semana.aberto,#semana:not([hidden]){display:block}
 #semana[hidden]{display:none!important}
+#semana.aberto{display:block!important}
 #semana h3{margin:0 0 8px;color:#0b6b54;font-size:16px}
 .p7-lista{list-style:none;padding:0;margin:0;display:grid;gap:6px}
 .p7-lista li{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;padding:8px 10px;border-radius:10px;background:#f4faf6;border-left:4px solid #c5e6d2;font-size:13.5px}
@@ -384,7 +385,7 @@ main.painel-area{margin:0;padding:0}
 <style>.publico-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px;font-size:13px;font-weight:700;color:#5d6b76}.publico-bar button{border:1px solid #0f8a6c;background:#fff;color:#0b6b54;border-radius:999px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px}.publico-bar button.on{background:#0f8a6c;color:#fff}.acesso-card.oculto{display:none}</style>
 <script>document.addEventListener('DOMContentLoaded',function(){var bs=document.querySelectorAll('.publico-bar button');bs.forEach(function(b){b.addEventListener('click',function(){var p=b.getAttribute('data-p');bs.forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.acesso-card').forEach(function(c){var t=(c.getAttribute('data-publico')||'');c.classList.toggle('oculto',!!p&&(' '+t+' ').indexOf(' '+p+' ')<0)});});});});</script>
     <div class="acesso-grade">
-<a class="acesso-card alerta-pisca" data-publico="estudante servidor empreendedor desempregado" href="#semana" id="cardSemana"><span class="ico">⚡</span><span class="nome">Atenção · esta semana</span><span class="desc" id="cardSemanaDesc">O que acontece nos próximos 7 dias</span></a>
+<a class="acesso-card alerta-pisca" data-publico="estudante servidor empreendedor desempregado" href="#semana" id="cardSemana" onclick="return window.__abrirSemana?window.__abrirSemana(event):true"><span class="ico">⚡</span><span class="nome">Atenção · esta semana</span><span class="desc" id="cardSemanaDesc">O que acontece nos próximos 7 dias</span></a>
     <a class="acesso-card" data-publico="servidor" href="formacoes.html"><span class="ico">📚</span><span class="nome">Formações para gestão Pública</span><span class="desc">Cursos e capacitações</span></a>
     <a class="acesso-card" data-publico="servidor empreendedor" href="editais.html"><span class="ico">📋</span><span class="nome">Editais</span><span class="desc">Chamadas e oportunidades</span></a>
     <a class="acesso-card" data-publico="desempregado estudante" href="empregos.html"><span class="ico">💼</span><span class="nome">Empregos</span><span class="desc">SINE, estágios e editais públicos</span></a>
@@ -398,12 +399,12 @@ main.painel-area{margin:0;padding:0}
     <a class="acesso-card" data-publico="estudante desempregado servidor" href="como-se-inscrever.html"><span class="ico">📝</span><span class="nome">Como se inscrever</span><span class="desc">SINE, IFMT, Selecon, IEL</span></a>
     <a class="acesso-card" data-publico="estudante desempregado servidor empreendedor" href="telefones.html#contatos-oficiais"><span class="ico">⭐</span><span class="nome">Contatos oficiais</span><span class="desc">SEMCITECI, SINE, ETEC, escola</span></a>
   </div>
-  <div id="semana" hidden aria-labelledby="semana-tit">
+  <div id="semana" class="aberto" aria-labelledby="semana-tit">
     <h3 id="semana-tit">⚡ O que não pode passar · próximos 7 dias</h3>
     <ul class="p7-lista" id="p7Lista"></ul>
     <p class="p7-nota">Campo Verde em destaque · atualizado com a agenda diária · confira o edital oficial.</p>
   </div>
-<script src="proximos-7-dias.js"></script>
+<script src="proximos-7-dias.js?v=3"></script>
 <script>
 (function(){
   function hojeCV(){
@@ -429,18 +430,20 @@ main.painel-area{margin:0;padding:0}
     });
   }
   function openSemana(e){
-    if(e){ e.preventDefault(); }
+    if(e){ e.preventDefault(); if(e.stopPropagation) e.stopPropagation(); }
+    render();
     var s=document.getElementById("semana");
     if(!s) return;
     s.hidden=false;
-    s.classList.add("aberto");
+    s.classList.add("aberto"); s.style.display="block";
     try{ s.scrollIntoView({behavior:"smooth",block:"nearest"}); }catch(err){ s.scrollIntoView(true); }
   }
   function ready(fn){ if(document.readyState!=="loading") fn(); else document.addEventListener("DOMContentLoaded",fn); }
+  window.__abrirSemana=function(e){ openSemana(e); return false; };
   ready(function(){
     render();
     var c=document.getElementById("cardSemana");
-    if(c){ c.addEventListener("click", openSemana); }
+    if(c){ c.addEventListener("click", openSemana, true); }
     if(location.hash==="#semana") openSemana();
   });
 })();
