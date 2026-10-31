@@ -18,14 +18,14 @@
 html,body{margin:0;padding:0}
 body{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--texto);background:var(--fundo);line-height:1.45;font-size:16px}
 a{color:var(--verde-esc)}
-header.topo{background:linear-gradient(135deg,#0f8a6c 0%,#14a37f 55%,#f2a33a 130%);color:#fff;padding:28px 0 70px;position:relative;overflow:hidden}
+header.topo{background:linear-gradient(135deg,#0f8a6c 0%,#14a37f 55%,#f2a33a 130%);color:#fff;padding:28px 20px 70px;position:relative;overflow:hidden}
 header.topo:after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08)}
-.wrap{max-width:none;width:100%;margin:0 auto;padding-left:clamp(16px,3vw,28px);padding-right:clamp(16px,3vw,28px);box-sizing:border-box}
+.wrap{max-width:1180px;margin:0 auto}
 .topo h1{margin:0;font-size:30px;line-height:1.15;letter-spacing:-.3px}
 .topo .sub{margin:6px 0 0;font-size:15px;opacity:.95}
-.topo .intro{margin:14px 0 0;max-width:none;font-size:16.5px;opacity:.97}
+.topo .intro{margin:14px 0 0;max-width:760px;font-size:15.5px;opacity:.97}
 .topo .atual{display:inline-block;margin-top:12px;background:rgba(255,255,255,.18);border-radius:999px;padding:4px 12px;font-size:13px}
-main.wrap,.shell.wrap{margin-top:-48px;padding-bottom:30px;position:relative}
+main.wrap{margin-top:-48px;padding:0 14px 30px;position:relative}
 .banner-novo{display:none;align-items:center;gap:12px;background:linear-gradient(90deg,#ff7a18,#d6338a);color:#fff;border-radius:var(--raio);padding:14px 18px;margin-bottom:14px;box-shadow:0 6px 20px rgba(214,51,138,.25);font-weight:600}
 .banner-novo.on{display:flex}
 .banner-novo .sino{font-size:26px}
@@ -50,7 +50,7 @@ select{border:1.5px solid var(--borda);border-radius:10px;padding:9px 10px;font-
 .linha-opcoes label{display:flex;align-items:center;gap:6px;cursor:pointer}
 .btn-limpar{background:none;border:0;color:var(--verde-esc);text-decoration:underline;cursor:pointer;font-size:14px;font-family:inherit}
 .resumo{margin:16px 2px 10px;color:var(--suave);font-size:14.5px}
-.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
 .card{background:#fff;border-radius:var(--raio);box-shadow:0 3px 14px rgba(16,40,32,.07);padding:16px 16px 12px;display:flex;flex-direction:column;border-top:5px solid var(--cor,#0f8a6c);position:relative}
 .card.encerrado{opacity:.62}
 .card .topo-card{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
@@ -88,16 +88,16 @@ select{border:1.5px solid var(--borda);border-radius:10px;padding:9px 10px;font-
 .verif{margin-top:10px;font-size:12.5px;color:var(--suave);border-top:1px solid var(--borda);padding-top:8px}
 .verif a{color:var(--suave)}
 .vazio{background:#fff;border-radius:var(--raio);padding:30px;text-align:center;color:var(--suave)}
-footer{max-width:none;width:100%;margin:10px auto 30px;padding:0 clamp(16px,3vw,36px);color:var(--suave);font-size:13.5px;box-sizing:border-box}
+footer{max-width:1180px;margin:10px auto 30px;padding:0 16px;color:var(--suave);font-size:13.5px}
 footer .aviso{background:var(--laranja-claro);border-left:4px solid var(--laranja);border-radius:10px;padding:10px 14px;color:#6b4513;margin-bottom:10px}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(40px);background:#183a30;color:#fff;padding:12px 18px;border-radius:12px;font-size:15px;opacity:0;transition:all .25s;z-index:50;max-width:90vw;text-align:center;pointer-events:none}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 @media (max-width:640px){
   body{font-size:15.5px}
-  header.topo{padding:22px 0 62px}
+  header.topo{padding:22px 16px 62px}
   .topo h1{font-size:24px}
   .topo .intro{font-size:14.5px}
-  main.wrap,.shell.wrap{padding-bottom:24px}
+  main.wrap{padding:0 10px 24px}
   .painel{padding:12px}
   .cats{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
   .chip{white-space:nowrap;padding:7px 12px;font-size:14px}
@@ -106,7 +106,7 @@ footer .aviso{background:var(--laranja-claro);border-left:4px solid var(--laranj
 }
 /* ---- Quem financia CT&I ---- */
 .atalho{margin-left:6px;color:#fff;text-decoration:none;font-weight:600}
-.atalho:hover{/* color via pill */filter:brightness(1.05)}
+.atalho:hover{background:rgba(255,255,255,.28)}
 .financiadores{margin-top:22px}
 .financiadores h2{margin:0 0 4px;font-size:20px;line-height:1.25}
 .fin-intro{margin:0 0 12px;color:var(--suave);font-size:14.5px}
@@ -141,7 +141,7 @@ details.fin-grupo[open] summary:after{transform:rotate(180deg)}
 /* ==== Redesign 2026-10-14: app moderno verde/branco/amarelo ==== */
 :root{--verde:#2e8b1e;--verde-esc:#1f6b12;--verde-claro:#eaf6e3;--amarelo:#f5c518;--fundo:#f3f7f1;--borda:#e1e9dc}
 body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-header.topo{background:radial-gradient(900px 400px at 85% -10%,rgba(245,197,24,.28),transparent 60%),radial-gradient(700px 420px at 0% 110%,rgba(160,230,110,.35),transparent 60%),linear-gradient(135deg,#1c6e10 0%,#2e8b1e 45%,#5cb82e 100%);padding:0 0 84px}
+header.topo{background:radial-gradient(900px 400px at 85% -10%,rgba(245,197,24,.28),transparent 60%),radial-gradient(700px 420px at 0% 110%,rgba(160,230,110,.35),transparent 60%),linear-gradient(135deg,#1c6e10 0%,#2e8b1e 45%,#5cb82e 100%);padding:0 20px 84px}
 header.topo:after{display:none}
 .grade-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:32px 32px;-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 100%);mask-image:linear-gradient(180deg,#000 30%,transparent 100%);pointer-events:none}
 .appbar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.16)}
@@ -154,27 +154,16 @@ header.topo:after{display:none}
 .topo h1{font-size:38px;font-weight:800;letter-spacing:-.8px}
 .topo .sub{font-weight:500;opacity:.9}
 .topo .intro{opacity:.92}
-.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px;max-width:min(920px,100%);position:relative;z-index:3}
-.kpi.kpi-eco,.kpi.kpi-eco:link,.kpi.kpi-eco:visited{text-decoration:none;color:#fff!important;display:flex;flex-direction:column;justify-content:center;cursor:pointer;transition:transform .15s ease,background .15s ease;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(242,140,40,.25)}
-.kpi.kpi-eco:hover{transform:translateY(-2px);background:rgba(255,255,255,.32);color:#fff!important}
-.kpi.kpi-eco b,.kpi.kpi-eco span{font-size:inherit;color:#fff!important}
-.kpi.kpi-eco b{font-size:18px;line-height:1.15;letter-spacing:-.3px}
-@media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr));max-width:100%}}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,200px));gap:12px;margin-top:20px}
 .kpi{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px;padding:12px 16px;transition:transform .2s,background .2s}
 .kpi:hover{transform:translateY(-3px);background:rgba(255,255,255,.22)}
 .kpi b{display:block;font-size:30px;font-weight:800;line-height:1.1}
 .kpi span{font-size:13px;opacity:.92}
 .kpi.destaque b{color:var(--amarelo)}
-.pills{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.topo .atual{margin:0;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);padding:10px 16px;font-size:14.5px;font-weight:700;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.12);transition:transform .18s,box-shadow .18s,filter .18s}
-.atalho{margin-left:0;color:#1a2430!important;text-decoration:none;font-weight:800;letter-spacing:.2px}
-.atalho:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 8px 20px rgba(0,0,0,.18);background:inherit}
-.pills .atual#atual{color:#fff;background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.4);font-weight:700}
-@media (max-width:640px){
-  .topo .atual{padding:9px 14px;font-size:13.5px}
-  .pills{gap:8px}
-}
-main.wrap,.shell.wrap{margin-top:-56px}
+.pills{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.topo .atual{margin:0;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:6px 13px;transition:background .2s}
+.atalho{margin-left:0}
+main.wrap{margin-top:-56px}
 .painel{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.7);box-shadow:0 10px 34px rgba(20,60,10,.12);border-radius:20px}
 .chip{transition:all .18s;font-weight:500}
 .chip:hover{border-color:var(--verde);transform:translateY(-1px)}
@@ -198,12 +187,12 @@ select:hover{border-color:#a9cf95}
 .btn{border-radius:999px;transition:all .18s}
 .btn-of{background:var(--verde)}
 @media (max-width:640px){
-  header.topo{padding:0 0 70px}
+  header.topo{padding:0 14px 70px}
   .marca img{height:auto;width:min(260px,62vw)}
   .live{font-size:10.5px;padding:4px 9px}
   .hero{padding-top:18px}
   .topo h1{font-size:25px;letter-spacing:-.4px}
-  .kpis{grid-template-columns:repeat(2,1fr);gap:8px;max-width:100%}
+  .kpis{grid-template-columns:repeat(3,1fr);gap:8px}
   .kpi{padding:10px 10px}
   .kpi b{font-size:22px}
   .kpi span{font-size:11.5px;line-height:1.2;display:block}
@@ -220,18 +209,14 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
 .orbs i:nth-child(3){left:41%;animation-delay:-8s}.orbs i:nth-child(4){left:63%;width:6px;height:6px;animation-delay:-2s;background:rgba(245,197,24,.7)}
 .orbs i:nth-child(5){left:78%;animation-delay:-10s}.orbs i:nth-child(6){left:92%;width:5px;height:5px;animation-delay:-6s}
 @keyframes sobe{0%{transform:translateY(0);opacity:0}10%{opacity:1}100%{transform:translateY(-480px);opacity:0}}
-.marca-box{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0;padding-right:10px}
-.marca-linha{display:flex;align-items:flex-start;flex-wrap:nowrap;gap:14px 18px;width:100%}
-.eco-inovacampoverde{flex:1;min-width:0;font-size:14.5px;font-weight:800;letter-spacing:.5px;color:#fff;text-transform:uppercase;line-height:1.3;max-width:none;text-shadow:0 1px 6px rgba(0,0,0,.25)}
-.eco-inovacampoverde small,.eco-inovacampoverde .proposito-mini{display:block;font-size:14px;font-weight:500;letter-spacing:.1px;opacity:.98;margin-top:6px;line-height:1.45;text-transform:none;max-width:none;text-align:justify;hyphens:auto;text-shadow:0 1px 4px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.85);border-radius:6px;padding:9px 12px}
-@media (max-width:640px){.marca-linha{flex-wrap:wrap}.eco-inovacampoverde{font-size:12.5px;max-width:100%}.eco-inovacampoverde .proposito-mini,.eco-inovacampoverde small{font-size:12.5px;text-align:justify}}
+.marca-box{display:flex;flex-direction:column;gap:4px}
 .credito{font-size:11.5px;color:rgba(255,255,255,.82);letter-spacing:.2px;padding-left:2px}
 .hero{display:block}
-.hero-ilu{position:absolute;right:0;top:20px;width:min(260px,22vw);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.15));opacity:.9}
+.hero-ilu{position:absolute;right:0;top:20px;width:300px;height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.15))}
 .radar-varre{transform-origin:160px 150px;animation:gira 6s linear infinite}
 @keyframes gira{to{transform:rotate(360deg)}}
 .pisca-pt{animation:pisca 2.4s ease-in-out infinite}
-.hero h1,.hero .sub,.hero .intro{max-width:none;padding-right:min(280px,28%)}
+.hero h1,.hero .sub,.hero .intro{max-width:calc(100% - 320px)}
 /* cards */
 .card{padding:0;overflow:hidden;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease,box-shadow .2s}
 .card.vis{opacity:1;transform:none}
@@ -275,15 +260,6 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
   .card{opacity:1;transform:none}
   .orbs{display:none}
 }
-
-/* Instagram SEMCITECI */
-.cta-linha{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.btn-ig{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);color:#fff!important;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:11px 18px;box-shadow:0 6px 18px rgba(221,42,123,.35);transition:transform .2s,box-shadow .2s,filter .2s}
-.btn-ig:hover{filter:brightness(1.08);transform:translateY(-2px);color:#fff!important}
-.btn-ig-hero{border:2px solid rgba(255,255,255,.85)}
-.ico-ig{flex:0 0 auto}
-@media (max-width:640px){.btn-ig-hero{width:100%;justify-content:center}}
-
 /* ==== WhatsApp ==== */
 .btn-zap{display:inline-flex;align-items:center;gap:9px;background:#25d366;color:#fff;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:11px 20px;box-shadow:0 6px 18px rgba(18,140,70,.35);transition:transform .2s,box-shadow .2s,background .2s}
 .btn-zap:hover{background:#1ebe5a;transform:translateY(-2px);box-shadow:0 10px 24px rgba(18,140,70,.45)}
@@ -297,65 +273,15 @@ header.topo{background-size:200% 200%,200% 200%,220% 220%;animation:gradMove 18s
 .zap-flutua:hover{transform:scale(1.08)}
 .zap-flutua:before{content:"";position:absolute;inset:0;border-radius:50%;background:#25d366;z-index:-1;animation:zapPulso 2.4s ease-out infinite}
 @keyframes zapPulso{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.7);opacity:0}}
-
-.flutuantes{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.visita-flutua{display:inline-flex;align-items:center;gap:6px;background:#1f3a5f;color:#fff;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:12.5px;font-weight:600;box-shadow:0 8px 24px rgba(31,58,95,.35);font-family:inherit;border:0;cursor:pointer;max-width:min(220px,70vw)}
-.visita-flutua:hover{filter:brightness(1.08)}
-.visita-flutua .n{font-size:15px;font-weight:800;color:#f5c518}
-.visita-flutua .rot{opacity:.92;font-weight:500;font-size:11.5px;line-height:1.2}
-.flutuantes .zap-flutua{position:static;right:auto;bottom:auto}
-@media (max-width:640px){.flutuantes{right:14px;bottom:14px}}
-
-@media (max-width:640px){.zap-flutua{width:54px;height:54px}.btn-zap-hero{width:100%;justify-content:center}}
+@media (max-width:640px){.zap-flutua{width:54px;height:54px;right:14px;bottom:14px}.btn-zap-hero{width:100%;justify-content:center}}
 @media (prefers-reduced-motion:reduce){.zap-flutua:before{display:none}}
-
-.proposito-eco{margin:16px 0 4px;max-width:760px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.45);border-left:5px solid #f5c518;border-radius:14px;padding:14px 16px 14px 18px;backdrop-filter:blur(6px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
-.proposito-eco .rotulo{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:#f5c518;background:rgba(0,0,0,.18);border-radius:999px;padding:3px 10px;margin-bottom:8px}
-.proposito-eco p{margin:0;font-size:15.5px;line-height:1.45;font-weight:600;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.2)}
-@media (max-width:640px){.proposito-eco{padding:12px 14px}.proposito-eco p{font-size:14.5px}}
-
-/* acesso rápido — abas retangulares isoladas + largura total */
-.shell{display:block;margin-top:-52px;position:relative;z-index:2;padding-bottom:28px}
-.shell-main{min-width:0}
-main.painel-area{margin:0;padding:0}
-.acesso{margin:0 0 18px}
-.acesso-tit{margin:0 0 10px;font-size:14px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:#ffe566!important;-webkit-text-fill-color:#ffe566!important;text-shadow:0 1px 3px rgba(0,0,0,.55)}
-.acesso-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;align-items:stretch}
-.acesso-card{display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:92px;height:100%;padding:16px 16px 14px;background:#fff;border:1px solid #0f8a6c;border-radius:14px;text-decoration:none;box-sizing:border-box;color:#1f2a33;box-shadow:0 3px 12px rgba(16,40,32,.06);transition:transform .18s,box-shadow .18s,border-color .18s}
-.acesso-card:hover{transform:translateY(-3px);border-color:#9fd8b5;box-shadow:0 10px 24px rgba(16,40,32,.12)}
-.acesso-card .ico{font-size:22px;line-height:1}
-.acesso-card .nome{font-size:15px;font-weight:700;line-height:1.25;color:#1f2a33}
-.acesso-card .desc{font-size:12.5px;color:#5d6b76;line-height:1.35}
-@media (max-width:640px){
-  .shell{margin-top:-40px}
-  .acesso-grade{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-items:stretch}
-  .acesso-card{min-height:78px;height:100%;padding:12px;box-sizing:border-box}
-  .acesso-card .nome{font-size:13.5px}
-  .acesso-card .desc{display:none}
-}
-@keyframes alertaPisca{0%,100%{border-color:#0f8a6c;box-shadow:0 0 0 0 rgba(15,138,108,.45)}50%{border-color:#1bb87a;box-shadow:0 0 0 6px rgba(15,138,108,.22)}}
-.acesso-card.alerta-pisca{animation:alertaPisca 1.2s ease-in-out infinite;background:#fff!important;border:2.5px solid #0f8a6c!important;font-weight:800;order:-1;color:inherit!important}
-.acesso-card.alerta-pisca .nome,.acesso-card.alerta-pisca .desc,.acesso-card.alerta-pisca .ico{color:inherit!important;-webkit-text-fill-color:unset!important;text-shadow:none!important}
-#semana{scroll-margin-top:16px;background:#fff;border:2px solid #0f8a6c;border-radius:16px;padding:14px 16px;margin:12px 0 0;display:none}
-#semana.aberto,#semana:not([hidden]){display:block}
-#semana[hidden]{display:none!important}
-#semana.aberto{display:block!important}
-#semana h3{margin:0 0 8px;color:#0b6b54;font-size:16px}
-.p7-lista{list-style:none;padding:0;margin:0;display:grid;gap:6px}
-.p7-lista li{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;padding:8px 10px;border-radius:10px;background:#f4faf6;border-left:4px solid #c5e6d2;font-size:13.5px}
-.p7-lista li.cv{border-left-color:#0f8a6c;background:#e8f6ec}
-.p7-data{font-weight:800;color:#0b6b54;min-width:42px}
-.p7-tipo{font-size:11px;padding:1px 7px;border-radius:99px;background:#d8f0e4;color:#0b6b54;font-weight:700}
-.p7-nota{font-size:12px;color:#666;margin:8px 0 0}
 </style>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="8f86e914-4372-4a19-87a1-45985c46d121"></script>
-<link rel="stylesheet" href="radar-fx.css?v=7"><meta name="alerta-v3" content="branco-contorno">
 </head>
 <body>
 <header class="topo">
   <div class="grade-bg" aria-hidden="true"></div><div class="orbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <nav class="appbar wrap">
-    <div class="marca-box"><div class="marca-linha"><a class="marca" href="#" aria-label="SEMCITECI – Campo Verde"><img src="logo_semciteci.png" alt="Campo Verde – Secretaria Municipal de Ciência, Tecnologia e Inovação" width="640" height="134"></a><span class="eco-inovacampoverde">Ecossistema de Inovação de Campo Verde (INOVACAMPOVERDE)<small class="proposito-mini">“Consolidar Campo Verde como um ecossistema integrado e propício à inovação e ao empreendedorismo, por meio de políticas públicas de incentivo, desenvolvimento tecnológico e formação de talentos, com foco na sustentabilidade socioeconômica e na qualidade de vida.”</small></span></div><span class="credito">Desenvolvido por Rigoberto Ximenes Lopes</span></div>
+    <div class="marca-box"><a class="marca" href="#" aria-label="SEMCITECI – Campo Verde"><img src="logo_semciteci.png" alt="Campo Verde – Secretaria Municipal de Ciência, Tecnologia e Inovação" width="640" height="134"></a><span class="credito">Desenvolvido por Rigoberto Ximenes Lopes</span></div>
     <span class="live"><i></i>AO VIVO</span>
   </nav>
   <div class="wrap hero"><svg class="hero-ilu" viewBox="0 0 320 300" aria-hidden="true">
@@ -374,95 +300,22 @@ main.painel-area{margin:0;padding:0}
     <span class="eyebrow">SEMCITECI · Campo Verde</span>
     <h1>🔎 Radar de Oportunidades – Campo Verde</h1>
     <p class="sub">SEMCITECI – Secretaria de Ciência, Tecnologia e Inovação – Prefeitura de Campo Verde</p>
-    <p class="intro">Aqui você encontra, em um só lugar, o que a SEMCITECI reúne para Campo Verde e região: <b>eventos</b>, <b>cursos gratuitos</b> (FIC do Sistema S, técnicos, formações para gestão pública e ensino superior), <b>editais e crédito</b> para inovação e tecnologia, <b>empregos, jovem aprendiz e estágios</b> na cidade, <b>competições e olimpíadas científicas</b>, além de um guia de <b>quem financia CT&amp;I</b> e de <b>emendas parlamentares</b>.</p>
-    <p class="intro" style="margin-top:10px">O painel é para empresas, startups, produtores rurais, jovens, estudantes, professores, prefeituras e toda a comunidade — com destaque para o que acontece em <b>Campo Verde</b>.</p>
+    <p class="intro">Eventos, cursos gratuitos, editais e crédito para inovação e tecnologia, além de competições e olimpíadas científicas: para empresas, startups, produtores rurais, jovens, estudantes, professores, prefeituras e toda a comunidade — com destaque para o que acontece em Campo Verde.</p>
     <div class="kpis" aria-label="Indicadores">
       <div class="kpi"><b id="kpiAbertas">–</b><span>oportunidades abertas</span></div>
       <div class="kpi destaque"><b id="kpiNovos">–</b><span>novidades</span></div>
       <div class="kpi"><b id="kpi10">–</b><span>encerram em até 10 dias</span></div>
-      <a class="kpi kpi-eco" href="ecossistema.html" title="Agenda do Ecossistema INOVACAMPOVERDE"><b>🌿 Ecossistema</b><span>agenda e formações</span></a>
     </div>
-    <div class="cta-linha"><a class="btn-zap btn-zap-hero" href="https://wa.me/556692629903?text=Ol%C3%A1%2C%20vim%20pelo%20Radar%20de%20Oportunidades%20e%20gostaria%20de%20falar%20com%20a%20SEMCITECI." target="_blank" rel="noopener"><svg class="ico-wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.7 6.5 1.7 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.9 1.3 1.3-3.8-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1C4.9 9.6 9.9 4.7 16 4.7s11.1 5 11.1 11.1S22.1 26.2 16 26.2zm6.1-8.3c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1-2.5c-.3-.7-.5-.6-.8-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg><span>Fale com a SEMCITECI</span></a>
-    <a class="btn-ig btn-ig-hero" href="https://www.instagram.com/semcitecicampoverdemt/" target="_blank" rel="noopener" aria-label="Instagram SEMCITECI"><svg class="ico-ig" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9A3.1 3.1 0 1 1 12 8.9a3.1 3.1 0 0 1 0 6.2zm6.4-8.2a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0zM12 4.4c-2.1 0-2.4.01-3.22.05-.78.04-1.32.16-1.79.34a3.6 3.6 0 0 0-1.3.85 3.6 3.6 0 0 0-.85 1.3c-.18.47-.3 1.01-.34 1.79C4.41 9.6 4.4 9.9 4.4 12s.01 2.4.05 3.22c.04.78.16 1.32.34 1.79.18.5.42.9.85 1.3.4.43.8.67 1.3.85.47.18 1.01.3 1.79.34.82.04 1.12.05 3.22.05s2.4-.01 3.22-.05c.78-.04 1.32-.16 1.79-.34a3.6 3.6 0 0 0 1.3-.85 3.6 3.6 0 0 0 .85-1.3c.18-.47.3-1.01.34-1.79.04-.82.05-1.12.05-3.22s-.01-2.4-.05-3.22c-.04-.78-.16-1.32-.34-1.79a3.6 3.6 0 0 0-.85-1.3 3.6 3.6 0 0 0-1.3-.85c-.47-.18-1.01-.3-1.79-.34C14.4 4.41 14.1 4.4 12 4.4zm0 1.53c2.07 0 2.31.01 3.12.05.75.03 1.16.16 1.43.26.36.14.62.31.89.58.27.27.44.53.58.89.1.27.23.68.26 1.43.04.81.05 1.05.05 3.12s-.01 2.31-.05 3.12c-.03.75-.16 1.16-.26 1.43-.14.36-.31.62-.58.89a2.4 2.4 0 0 1-.89.58c-.27.1-.68.23-1.43.26-.81.04-1.05.05-3.12.05s-2.31-.01-3.12-.05c-.75-.03-1.16-.16-1.43-.26a2.4 2.4 0 0 1-.89-.58 2.4 2.4 0 0 1-.58-.89c-.1-.27-.23-.68-.26-1.43-.04-.81-.05-1.05-.05-3.12s.01-2.31.05-3.12c.03-.75.16-1.16.26-1.43.14-.36.31-.62.58-.89.27-.27.53-.44.89-.58.27-.1.68-.23 1.43-.26.81-.04 1.05-.05 3.12-.05z"/></svg><span>@semcitecicampoverdemt</span></a>
+    <div class="cta-linha"><a class="btn-zap btn-zap-hero" href="https://wa.me/556692629903?text=Ol%C3%A1%2C%20vim%20pelo%20Radar%20de%20Oportunidades%20e%20gostaria%20de%20falar%20com%20a%20SEMCITECI." target="_blank" rel="noopener"><svg class="ico-wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.7 6.5 1.7 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.9 1.3 1.3-3.8-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1C4.9 9.6 9.9 4.7 16 4.7s11.1 5 11.1 11.1S22.1 26.2 16 26.2zm6.1-8.3c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1-2.5c-.3-.7-.5-.6-.8-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg><span>Fale com a SEMCITECI</span></a></div>
+    <div class="pills">
+    <span class="atual" id="atual"></span>
+    <a class="atual atalho" href="#financiadores">🏦 Quem financia CT&amp;I</a>
+    <a class="atual atalho" href="#emendas">🏛️ Emendas parlamentares</a>
     </div>
-    <span class="atual" id="atual" style="margin-top:18px;display:inline-block"></span>
   </div>
 </header>
-<div class="shell wrap">
-    
-<aside class="acesso" aria-label="Acesso rápido às abas">
-  <h2 class="acesso-tit" data-v="ig+alinhar-2">Acesso rápido</h2>
-<div class="publico-bar" role="group" aria-label="Filtrar por público"><span>Sou:</span><button type="button" data-p="estudante">🎒 Estudante</button><button type="button" data-p="servidor">🏛️ Servidor público</button><button type="button" data-p="empreendedor">🚀 Empreendedor</button><button type="button" data-p="desempregado">💼 Desempregado</button><button type="button" data-p="" class="on">Todos</button></div>
-<style>.publico-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px;padding:0;font-size:13px;font-weight:700;color:#5d6b76}.publico-bar button{border:1px solid #0f8a6c;background:#fff;color:#0b6b54;border-radius:999px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px}.publico-bar button.on{background:#0f8a6c;color:#fff}.acesso-card.oculto{display:none}</style>
-<script>document.addEventListener('DOMContentLoaded',function(){var bs=document.querySelectorAll('.publico-bar button');bs.forEach(function(b){b.addEventListener('click',function(){var p=b.getAttribute('data-p');bs.forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.acesso-card').forEach(function(c){var t=(c.getAttribute('data-publico')||'');c.classList.toggle('oculto',!!p&&(' '+t+' ').indexOf(' '+p+' ')<0)});});});});</script>
-    <div class="acesso-grade">
-<a class="acesso-card alerta-pisca" data-publico="estudante servidor empreendedor desempregado" href="#semana" id="cardSemana" data-v="branco-3" onclick="return window.__abrirSemana?window.__abrirSemana(event):true"><span class="ico">⚡</span><span class="nome">Atenção · esta semana</span><span class="desc" id="cardSemanaDesc">O que acontece nos próximos 7 dias</span></a>
-    <a class="acesso-card" data-publico="servidor" href="formacoes.html"><span class="ico">📚</span><span class="nome">Formações para gestão Pública</span><span class="desc">Cursos e capacitações</span></a>
-    <a class="acesso-card" data-publico="servidor empreendedor" href="editais.html"><span class="ico">📋</span><span class="nome">Editais</span><span class="desc">Chamadas e oportunidades</span></a>
-    <a class="acesso-card" data-publico="desempregado estudante" href="empregos.html"><span class="ico">💼</span><span class="nome">Empregos</span><span class="desc">SINE, estágios e editais públicos</span></a>
-    <a class="acesso-card" data-publico="servidor desempregado empreendedor estudante" href="telefones.html"><span class="ico">📞</span><span class="nome">Telefones</span><span class="desc">Secretarias, saúde, emergências</span></a>
-    <a class="acesso-card" data-publico="desempregado empreendedor estudante" href="cursos-fic.html"><span class="ico">🛠️</span><span class="nome">Cursos FIC</span><span class="desc">Sistema S em Campo Verde</span></a>
-    <a class="acesso-card" data-publico="estudante desempregado" href="cursos-tecnicos.html"><span class="ico">🎓</span><span class="nome">Cursos técnicos</span><span class="desc">IFMT, ETEC e estaduais</span></a>
-    <a class="acesso-card" data-publico="estudante servidor" href="ensino-superior.html"><span class="ico">🏫</span><span class="nome">Ensino superior</span><span class="desc">Faculdades e polos</span></a>
-    <a class="acesso-card" data-publico="empreendedor servidor" href="#financiadores"><span class="ico">🏦</span><span class="nome">Quem financia CT&amp;I</span><span class="desc">Fontes e programas</span></a>
-    <a class="acesso-card" data-publico="servidor" href="#emendas"><span class="ico">🏛️</span><span class="nome">Emendas parlamentares</span><span class="desc">Guia e orientação</span></a>
-    <a class="acesso-card" data-publico="estudante" href="estagios-publicos.html"><span class="ico">🎓</span><span class="nome">Estágios públicos</span><span class="desc">IFMT, UFMT, UNEMAT, Prefeitura</span></a>
-    <a class="acesso-card" data-publico="estudante desempregado servidor" href="como-se-inscrever.html"><span class="ico">📝</span><span class="nome">Como se inscrever</span><span class="desc">SINE, IFMT, Selecon, IEL</span></a>
-    <a class="acesso-card" data-publico="estudante desempregado servidor empreendedor" href="telefones.html#contatos-oficiais"><span class="ico">⭐</span><span class="nome">Contatos oficiais</span><span class="desc">SEMCITECI, SINE, ETEC, escola</span></a>
-  </div>
-  <div id="semana" class="aberto" aria-labelledby="semana-tit">
-    <h3 id="semana-tit">⚡ O que não pode passar · próximos 7 dias</h3>
-    <ul class="p7-lista" id="p7Lista"></ul>
-    <p class="p7-nota">Campo Verde em destaque · atualizado com a agenda diária · confira o edital oficial.</p>
-  </div>
-<script src="proximos-7-dias.js?v=3"></script>
-<script>
-(function(){
-  function hojeCV(){
-    var hoje=new Date(new Date().toLocaleString("en-US",{timeZone:"America/Cuiaba"}));
-    hoje.setHours(0,0,0,0); return hoje;
-  }
-  function render(){
-    var d=window.PROXIMOS_7_DIAS; if(!d) return;
-    var hoje=hojeCV(); var fim=new Date(hoje); fim.setDate(fim.getDate()+7);
-    var T={edital:"edital",formacao:"formação",evento:"evento"};
-    var it=d.itens.filter(function(i){var x=new Date(i.data+"T00:00:00");return x>=hoje&&x<=fim;})
-      .sort(function(a,b){return a.data<b.data?-1:a.data>b.data?1:(b.cv-a.cv);});
-    var ul=document.getElementById("p7Lista");
-    var desc=document.getElementById("cardSemanaDesc");
-    if(desc) desc.textContent=it.length?(it.length+" item(ns) · toque para ver"):"Nada urgente nesta semana";
-    if(!ul) return;
-    ul.innerHTML="";
-    if(!it.length){ ul.innerHTML="<li>Nenhum item nos próximos 7 dias.</li>"; return; }
-    it.forEach(function(i){
-      var p=i.data.split("-"); var li=document.createElement("li"); if(i.cv) li.className="cv";
-      li.innerHTML='<span class="p7-data">'+p[2]+"/"+p[1]+'</span><span class="p7-tipo">'+(T[i.tipo]||i.tipo)+'</span><span><a href="'+i.link+'">'+i.titulo+"</a>"+(i.detalhe?' · <small>'+i.detalhe+"</small>":"")+"</span>";
-      ul.appendChild(li);
-    });
-  }
-  function openSemana(e){
-    if(e){ e.preventDefault(); if(e.stopPropagation) e.stopPropagation(); }
-    render();
-    var s=document.getElementById("semana");
-    if(!s) return;
-    s.hidden=false;
-    s.classList.add("aberto"); s.style.display="block";
-    try{ s.scrollIntoView({behavior:"smooth",block:"nearest"}); }catch(err){ s.scrollIntoView(true); }
-  }
-  function ready(fn){ if(document.readyState!=="loading") fn(); else document.addEventListener("DOMContentLoaded",fn); }
-  window.__abrirSemana=function(e){ openSemana(e); return false; };
-  ready(function(){
-    render();
-    var c=document.getElementById("cardSemana");
-    if(c){ c.addEventListener("click", openSemana, true); }
-    if(location.hash==="#semana") openSemana();
-  });
-})();
-</script>
-</aside>
 
-<div class="shell-main">
-<main class="painel-area">
+<main class="wrap">
   <div class="banner-novo" id="bannerNovo" role="status">
     <span class="sino">🔔</span><span id="bannerTxt"></span>
     <button type="button" id="verNovos">Ver novidades</button>
@@ -605,111 +458,17 @@ main.painel-area{margin:0;padding:0}
     <p class="fin-nota">Datas conferidas em 14/10/2026. Onde está “a confirmar” ou “não informado”, a data oficial ainda não foi publicada: confirme sempre com o gabinete do parlamentar e nos sites oficiais (Congresso, ALMT, Transferegov).</p>
   </section>
 </main>
-</div><!-- /.shell-main -->
-</div><!-- /.shell -->
-
-
-<style>
-/* curtir-visivel */
-#curtir-sugestoes{max-width:1100px;margin:28px auto;padding:22px 20px;background:linear-gradient(135deg,#e8f6ec,#fff8dc);border:3px solid #0f8a6c;border-radius:20px;box-shadow:0 10px 28px rgba(15,138,108,.18)}
-#curtir-sugestoes h2{margin:0 0 6px;font-size:1.45rem;color:#0b6b54}
-#curtir-sugestoes .curtir-box,#curtir-sugestoes .sugestao-box{background:#fff;border:2px solid #b9e6c9;border-radius:16px;padding:16px}
-#curtir-sugestoes button,#curtir-sugestoes .btn-curtir{font-size:16px!important;padding:12px 18px!important}
-
-#curtir-sugestoes{max-width:none;margin:18px auto 8px;padding:0 clamp(16px,3vw,36px);box-sizing:border-box}
-#curtir-sugestoes .cs-box{background:var(--verde-claro);border:1px solid #bfe6d9;border-radius:14px;padding:18px;display:grid;grid-template-columns:minmax(200px,1fr) 2fr;gap:18px}
-#curtir-sugestoes h2{margin:0 0 6px;font-size:18px;color:var(--verde-esc)}
-#curtir-sugestoes p{margin:0 0 10px;font-size:14px;color:#355}
-.cs-like{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--verde);color:var(--verde-esc);border-radius:999px;padding:8px 16px;font:600 15px Inter,sans-serif;cursor:pointer}
-.cs-like.on{background:var(--verde);color:#fff}
-.cs-like .h{font-size:18px}
-#curtir-sugestoes form{display:grid;gap:8px}
-#curtir-sugestoes input,#curtir-sugestoes textarea{font:14px Inter,sans-serif;padding:9px 11px;border:1px solid #bfe6d9;border-radius:10px;width:100%;box-sizing:border-box}
-#curtir-sugestoes textarea{min-height:80px;resize:vertical}
-.cs-acoes{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.cs-btn{background:var(--verde);color:#fff;border:0;border-radius:10px;padding:10px 16px;font:600 14px Inter,sans-serif;cursor:pointer}
-.cs-btn:hover{background:var(--verde-esc)}
-.cs-mail{font-size:13.5px}
-.sug-flutua{position:fixed;top:14px;right:14px;z-index:100002;display:inline-flex;align-items:center;gap:6px;background:#e11d48;color:#fff!important;text-decoration:none;font:700 13px system-ui,sans-serif;padding:10px 14px;border-radius:999px;box-shadow:0 6px 18px rgba(225,29,72,.4)}.sug-flutua:hover{background:#be123c;color:#fff!important}
-@media (max-width:720px){#curtir-sugestoes .cs-box{grid-template-columns:1fr}}
-</style>
-<section id="curtir-sugestoes" aria-label="Curtir a página e deixar sugestão">
- <div class="cs-box">
-  <div>
-   <h2>Gostou do Radar?</h2>
-   <p>Curta a página — sua curtida fica salva neste navegador.</p>
-   <button type="button" class="cs-like" id="csLike" aria-pressed="false"><span class="h">♡</span><span id="csLikeTxt">Curtir a página</span></button>
-  </div>
-  <div>
-   <h2>Deixar sugestão</h2>
-   <p>Sua ideia vai direto para a SEMCITECI pelo WhatsApp.</p>
-   <form id="csForm">
-    <input id="csNome" type="text" maxlength="80" placeholder="Seu nome (opcional)" aria-label="Seu nome (opcional)">
-    <textarea id="csTexto" maxlength="800" required placeholder="Escreva sua sugestão…" aria-label="Sua sugestão"></textarea>
-    <div class="cs-acoes">
-     <button type="submit" class="cs-btn">Enviar pelo WhatsApp</button>
-     <a href="#" id="csMail" class="cs-mail">ou enviar por e-mail</a>
-    </div>
-   </form>
-  </div>
- </div>
-</section>
-<script>
-(function(){
- var K='radar_curtiu',b=document.getElementById('csLike'),t=document.getElementById('csLikeTxt');
- function pinta(){var on=false;try{on=localStorage.getItem(K)==='1'}catch(e){}
-  b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.querySelector('.h').textContent=on?'♥':'♡';t.textContent=on?'Você curtiu! Obrigado':'Curtir a página';}
- b.addEventListener('click',function(){try{localStorage.setItem(K,localStorage.getItem(K)==='1'?'0':'1')}catch(e){}pinta();});
- pinta();
- function msg(){var n=document.getElementById('csNome').value.trim(),s=document.getElementById('csTexto').value.trim();
-  if(!s){document.getElementById('csTexto').focus();return null;}
-  return 'Sugestão para o Radar de Oportunidades'+(n?' (de '+n+')':'')+':\n\n'+s;}
- document.getElementById('csForm').addEventListener('submit',function(e){e.preventDefault();var m=msg();if(!m)return;
-  window.open('https://wa.me/556692629903?text='+encodeURIComponent(m),'_blank','noopener');});
- document.getElementById('csMail').addEventListener('click',function(e){e.preventDefault();var m=msg();if(!m)return;
-  location.href='mailto:eaprigo@gmail.com?subject='+encodeURIComponent('Sugestão – Radar SEMCITECI')+'&body='+encodeURIComponent(m);});
-})();
-</script>
 
 <footer>
   <div class="aviso">⚠️ As informações foram conferidas nas páginas oficiais na data indicada em cada oportunidade. Prazos e regras podem mudar: confirme sempre na página oficial antes de se inscrever. A Prefeitura não faz inscrições em nome de ninguém.</div>
-  <div class="rodape-zap"><a class="btn-zap" href="https://wa.me/556692629903?text=Ol%C3%A1%2C%20vim%20pelo%20Radar%20de%20Oportunidades%20e%20gostaria%20de%20falar%20com%20a%20SEMCITECI." target="_blank" rel="noopener"><svg class="ico-wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.7 6.5 1.7 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.9 1.3 1.3-3.8-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1C4.9 9.6 9.9 4.7 16 4.7s11.1 5 11.1 11.1S22.1 26.2 16 26.2zm6.1-8.3c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1-2.5c-.3-.7-.5-.6-.8-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg><span>Fale com a SEMCITECI</span></a>
-    <a class="btn-ig btn-ig-rodape" href="https://www.instagram.com/semcitecicampoverdemt/" target="_blank" rel="noopener" aria-label="Instagram SEMCITECI"><svg class="ico-ig" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9A3.1 3.1 0 1 1 12 8.9a3.1 3.1 0 0 1 0 6.2zm6.4-8.2a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0zM12 4.4c-2.1 0-2.4.01-3.22.05-.78.04-1.32.16-1.79.34a3.6 3.6 0 0 0-1.3.85 3.6 3.6 0 0 0-.85 1.3c-.18.47-.3 1.01-.34 1.79C4.41 9.6 4.4 9.9 4.4 12s.01 2.4.05 3.22c.04.78.16 1.32.34 1.79.18.5.42.9.85 1.3.4.43.8.67 1.3.85.47.18 1.01.3 1.79.34.82.04 1.12.05 3.22.05s2.4-.01 3.22-.05c.78-.04 1.32-.16 1.79-.34a3.6 3.6 0 0 0 1.3-.85 3.6 3.6 0 0 0 .85-1.3c.18-.47.3-1.01.34-1.79.04-.82.05-1.12.05-3.22s-.01-2.4-.05-3.22c-.04-.78-.16-1.32-.34-1.79a3.6 3.6 0 0 0-.85-1.3 3.6 3.6 0 0 0-1.3-.85c-.47-.18-1.01-.3-1.79-.34C14.4 4.41 14.1 4.4 12 4.4zm0 1.53c2.07 0 2.31.01 3.12.05.75.03 1.16.16 1.43.26.36.14.62.31.89.58.27.27.44.53.58.89.1.27.23.68.26 1.43.04.81.05 1.05.05 3.12s-.01 2.31-.05 3.12c-.03.75-.16 1.16-.26 1.43-.14.36-.31.62-.58.89a2.4 2.4 0 0 1-.89.58c-.27.1-.68.23-1.43.26-.81.04-1.05.05-3.12.05s-2.31-.01-3.12-.05c-.75-.03-1.16-.16-1.43-.26a2.4 2.4 0 0 1-.89-.58 2.4 2.4 0 0 1-.58-.89c-.1-.27-.23-.68-.26-1.43-.04-.81-.05-1.05-.05-3.12s.01-2.31.05-3.12c.03-.75.16-1.16.26-1.43.14-.36.31-.62.58-.89.27-.27.53-.44.89-.58.27-.1.68-.23 1.43-.26.81-.04 1.05-.05 3.12-.05z"/></svg><span>@semcitecicampoverdemt</span></a></div>
+  <div class="rodape-zap"><a class="btn-zap" href="https://wa.me/556692629903?text=Ol%C3%A1%2C%20vim%20pelo%20Radar%20de%20Oportunidades%20e%20gostaria%20de%20falar%20com%20a%20SEMCITECI." target="_blank" rel="noopener"><svg class="ico-wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.7 6.5 1.7 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.9 1.3 1.3-3.8-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1C4.9 9.6 9.9 4.7 16 4.7s11.1 5 11.1 11.1S22.1 26.2 16 26.2zm6.1-8.3c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1-2.5c-.3-.7-.5-.6-.8-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg><span>Fale com a SEMCITECI</span></a></div>
   <div id="rodape"></div>
 </footer>
-<div class="flutuantes">
-<a class="sug-flutua" href="#curtir-sugestoes" title="Curtir ou deixar sugestão">♥ Curtir / Sugestões</a>
-<a class="visita-flutua" href="https://cloud.umami.is/share/7hVTdO6MIDLnGNvM" target="_blank" rel="noopener noreferrer" title="Ver estatísticas públicas" aria-label="Visitas ao Radar">
-  <span class="n" id="visitaNum">–</span>
-  <span class="rot">visitas<br>no Radar</span>
-</a>
 <a class="zap-flutua" href="https://wa.me/556692629903?text=Ol%C3%A1%2C%20vim%20pelo%20Radar%20de%20Oportunidades%20e%20gostaria%20de%20falar%20com%20a%20SEMCITECI." target="_blank" rel="noopener" aria-label="Fale com a SEMCITECI pelo WhatsApp" title="Fale com a SEMCITECI"><svg class="ico-wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.7 6.5 1.7 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.9 1.3 1.3-3.8-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1C4.9 9.6 9.9 4.7 16 4.7s11.1 5 11.1 11.1S22.1 26.2 16 26.2zm6.1-8.3c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1-2.5c-.3-.7-.5-.6-.8-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg></a>
-</div>
-<script>
-(function(){
-  var SHARE='7hVTdO6MIDLnGNvM';
-  var WID='8f86e914-4372-4a19-87a1-45985c46d121';
-  var BASE='https://cloud.umami.is/analytics/us/api';
-  var el=document.getElementById('visitaNum');
-  if(!el) return;
-  function fmt(n){ try{ return Number(n).toLocaleString('pt-BR'); }catch(e){ return String(n); } }
-  fetch(BASE+'/share/'+SHARE).then(function(r){ return r.json(); }).then(function(s){
-    var token=s.token; if(!token) throw new Error('no token');
-    var end=Date.now();
-    return fetch(BASE+'/websites/'+WID+'/stats?startAt=0&endAt='+end,{
-      headers:{'x-umami-share-token':token,'x-umami-share-context':SHARE}
-    }).then(function(r){ return r.json(); });
-  }).then(function(st){
-    var v=(st&& (st.visitors!=null?st.visitors:st.pageviews));
-    if(v==null) return;
-    el.textContent=fmt(v);
-  }).catch(function(){ /* silent */ });
-})();
-</script>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script id="dados" type="application/json">{
- "atualizado_em": "2026-10-30",
+ "atualizado_em": "2026-10-31",
  "itens": [
   {
    "id": "ifmt-cv-semana-agronomia-2026",
@@ -3415,7 +3174,7 @@ main.painel-area{margin:0;padding:0}
    "local": "Nacional (inscrição on-line)",
    "link": "https://desafios.enap.gov.br/desafios/solucoes-que-alimentam-2026/",
    "fonte_verificada": "https://www.gov.br/mds/pt-br/noticias/inscricoes-para-edital-de-solucoes-inovadoras-em-alimentacao-urbana-sao-prorrogadas-ate-2-de-novembro",
-   "verificado_em": "2026-10-24",
+   "verificado_em": "2026-10-31",
    "data_inclusao": "2026-10-14",
    "destaque": false,
    "observacoes": "PRORROGADO: inscrições até 02/11/2026 (notícia oficial do MDS e cronograma da página do desafio na Enap, conferidos em 22/10/2026). Resultado preliminar 16/11; catálogo de soluções 01/12/2026. Sete desafios da Estratégia Alimenta Cidades; aceita inovação tecnológica, social, organizacional ou metodológica.",
@@ -3908,7 +3667,7 @@ main.painel-area{margin:0;padding:0}
    "local": "Nacional (inscrição on-line; desenvolvimento com a Cemig)",
    "link": "https://www.cemig.com.br/noticia/imprensa/cemig-busca-startups-para-solucionar-13-desafios-reais-do-setor-eletrico/",
    "fonte_verificada": "https://app-compras.cemig.com.br/pesquisa/?idE=21974",
-   "verificado_em": "2026-10-17",
+   "verificado_em": "2026-10-31",
    "data_inclusao": "2026-10-17",
    "destaque": true,
    "observacoes": "Portal de Compras Cemig: Data Inicial 18/10/2026 e Data Final 01/11/2026. Notícia Cemig 06/10/2026 confirma prazo até 1º/11 e projetos até R$ 1,6 mi. Elegibilidade: startup com até 10 anos de CNPJ e receita bruta até R$ 16 mi no ano anterior. Zing cita fim em 08/11 — prevalece a Data Final do portal Cemig (01/11).",
@@ -4347,7 +4106,7 @@ main.painel-area{margin:0;padding:0}
    "local": "Nacional (inscrição on-line; finalistas apresentam no Congresso Nacional do Poder Público, em Porto Alegre-RS)",
    "link": "https://inlegis.com.br/premio-inlegis-2026/",
    "fonte_verificada": "https://inlegis.com.br/premio-inlegis-2026/",
-   "verificado_em": "2026-10-21",
+   "verificado_em": "2026-10-31",
    "data_inclusao": "2026-10-21",
    "destaque": false,
    "observacoes": "Página oficial do INLEGIS (consultada em 21/10/2026): inscrições até 06/11/2026, inscrição gratuita, prefeituras concorrem na categoria especial de inovação. A página traz a data da premiação como 12/11 em um trecho e 10/11/2026 (Porto Alegre-RS) em outro; confirme com o organizador. A participação exige que o responsável esteja inscrito e presente no Congresso Nacional do Poder Público, cuja inscrição é separada.",
@@ -4927,10 +4686,7 @@ main.painel-area{margin:0;padding:0}
    ]
   }
  ],
- "novidades_ids": [
-  "hackalucas-2026",
-  "cnpq-petrobras-31-2026-inspiracao"
- ]
+ "novidades_ids": []
 }</script>
 <script>
 (function(){
@@ -5179,6 +4935,5 @@ try{localStorage.setItem(CHAVE_VISITA,HOJE);}catch(e){}
 window.__radar={itens:D.itens,estado:estado,render:render,textoWhats:textoWhats};
 })();
 </script>
-<script defer src="radar-fx.js?v=2"></script>
 </body>
 </html>
