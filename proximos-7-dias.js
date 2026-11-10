@@ -1,7 +1,7 @@
 /* Próximos 7 dias — atualizado pelas rotinas diárias do Radar.
    Campos: data (AAAA-MM-DD), titulo, tipo (edital|formacao|evento), link, cv (true = Campo Verde), detalhe. */
 window.PROXIMOS_7_DIAS = {
-  atualizado: "2026-11-09",
+  atualizado: "2026-11-10",
   itens: [
     { data: "2026-11-13", titulo: "IFMT Campo Verde — Edital 227/2026 · Prof. Substituto de Agronomia · fim das inscrições", tipo: "edital", link: "empregos.html#orgaos-publicos", cv: true, detalhe: "inscrições até 13/11 · seletivo.ifmt.edu.br" },
     { data: "2026-11-11", titulo: "DigitalBurguer — Espaço Classic, Campo Verde (19h)", tipo: "evento", link: "ecossistema.html", cv: true, detalhe: "evento fechado · somente convidados" },
@@ -17,6 +17,11 @@ window.PROXIMOS_7_DIAS = {
     { data: "2026-11-13", titulo: "Hackathon Regional InovaAgro MS — Chapadão do Sul (13 a 15/11) · inscrição até 13/11", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "gratuito · agro e inovação" },
     { data: "2026-11-13", titulo: "NASA Space Apps Challenge — Rio Verde-GO (13 a 15/11)", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "gratuito com pré-seleção · Sympla" },
     { data: "2026-11-13", titulo: "SmartCities Hackathon 2026 — Londrina-PR (13 a 15/11)", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "transformação digital na gestão pública" },
-    { data: "2026-11-15", titulo: "HackaLucas 2026 — fim da pré-inscrição (evento 27 a 29/11)", tipo: "edital", link: "formacoes.html", cv: false, detalhe: "Lucas do Rio Verde · Green Future Hub" }
+    { data: "2026-11-11", titulo: "XXX ENBRA — Encontro Brasileiro de Administração · Cuiabá (11 a 13/11)", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "gestão, inovação e tecnologia · CFA/CRA-MT · ~130 km" },
+    { data: "2026-11-15", titulo: "HackaLucas 2026 — fim da pré-inscrição (evento 27 a 29/11)", tipo: "edital", link: "formacoes.html", cv: false, detalhe: "Lucas do Rio Verde · Green Future Hub" },
+    { data: "2026-11-16", titulo: "HACKAPEL (IA na gestão pública, Pelotas-RS) · inscrição de equipes até 16/11", tipo: "edital", link: "formacoes.html", cv: false, detalhe: "gratuito · equipes de 5 estudantes · evento 12 e 13/12" },
+    { data: "2026-11-16", titulo: "Hackathon Cidades Sábias (Canoas-RS) · inscrição até 16/11", tipo: "edital", link: "formacoes.html", cv: false, detalhe: "paralelo ao CONIPC Brasil, 25 e 26/11" },
+    { data: "2026-11-17", titulo: "VII CEPEX IFMT Rondonópolis", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "1.000 vagas · ~130 km de Campo Verde" },
+    { data: "2026-11-17", titulo: "Minicurso IA, LGPD e Compliance (MBA USP/ESALQ, online) · inscrições até 17/11", tipo: "formacao", link: "formacoes.html", cv: false, detalhe: "gratuito · aulas 11 e 18/11, 18h–21h MT" }
   ]
 };
