@@ -1,7 +1,7 @@
 /* Próximos 7 dias — atualizado pelas rotinas diárias do Radar.
    Campos: data (AAAA-MM-DD), titulo, tipo (edital|formacao|evento), link, cv (true = Campo Verde), detalhe. */
 window.PROXIMOS_7_DIAS = {
-  atualizado: "2026-11-22",
+  atualizado: "2026-11-23",
   itens: [
     { data: "2026-11-25", titulo: "IBGE — Recenseador do Censo Agropecuário (PSS 03/2026) · 8 vagas em Campo Verde · inscrições até hoje", tipo: "edital", link: "empregos.html", cv: true, detalhe: "Cesgranrio · até 23h59 de Brasília · taxa R$ 70" },
     { data: "2026-11-26", titulo: "SECITECI-MT Edital 012/2026 — cadastro de reserva nas ETECs (inclui Campo Verde) · inscrições até hoje", tipo: "edital", link: "empregos.html", cv: true, detalhe: "temporários · R$ 3.201,98 a R$ 12.937,29" },
@@ -25,6 +25,8 @@ window.PROXIMOS_7_DIAS = {
     { data: "2026-11-27", titulo: "Festival Clima, Território e Futuros Possíveis + Hackathon de Clima — Parque Tecnológico MT (27 a 29/11)", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "gratuito · Luma · ~130 km" },
     { data: "2026-11-27", titulo: "HackaLucas 2026 — Lucas do Rio Verde, Green Future Hub (27 a 29/11)", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "48h · pré-inscrição encerrada em 15/11" },
     { data: "2026-11-28", titulo: "ALI Day 2026 — Sebrae/MT Barra do Garças (a partir das 8h)", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "gratuito · inovação e produtividade · raio ~400 km" },
-    { data: "2026-11-28", titulo: "CTE-IA Fase III (SiDi/Softex) — aceleração gratuita de startups de IA · inscrições até hoje (22h59 Cuiabá)", tipo: "edital", link: "index.html", cv: false, detalhe: "on-line · 20 vagas · startups com CNPJ até 5 anos" }
+    { data: "2026-11-28", titulo: "CTE-IA Fase III (SiDi/Softex) — aceleração gratuita de startups de IA · inscrições até hoje (22h59 Cuiabá)", tipo: "edital", link: "index.html", cv: false, detalhe: "on-line · 20 vagas · startups com CNPJ até 5 anos" },
+    { data: "2026-11-26", titulo: "Pulse Day Canarana (IBRAFE) — inovação no agro de grãos e leguminosas · Canarana-MT", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "gratuito · a partir das 8h · Vale do Araguaia" },
+    { data: "2026-11-30", titulo: "Jacto HackTalents — agro digital · inscrições individuais até hoje", tipo: "formacao", link: "formacoes.html", cv: false, detalhe: "on-line · mentorias 06–10/12 · pitch 11/12" }
   ]
 };
