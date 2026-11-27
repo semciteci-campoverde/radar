@@ -19,7 +19,7 @@ window.PROXIMOS_7_DIAS = {
     { data: "2026-11-30", titulo: "BNDES Garagem — Ciclo 3 · inscrições até 30/11", tipo: "edital", link: "index.html", cv: false, detalhe: "aceleração de startups · reconferido 27/11" },
     { data: "2026-11-30", titulo: "Sanesul Innova — PoC para startups em saneamento · inscrições prorrogadas até 30/11", tipo: "edital", link: "index.html", cv: false, detalhe: "Itaipu Parquetec · reconferido 27/11" },
     { data: "2026-11-30", titulo: "Sebrae Inova Startups 6ª edição · inscrições até 30/11", tipo: "edital", link: "index.html", cv: false, detalhe: "investimento e aceleração" },
-    { data: "2026-11-30", titulo: "Hack Brasil 2026 — submissão dos projetos até 30/11 (23h59)", tipo: "edital", link: "index.html", cv: false, detalhe: "hackathon nacional · final 12/12 em São Paulo" },
+    { data: "2026-11-30", titulo: "Hack Brasil 2026 — submissão dos projetos até 30/11", tipo: "edital", link: "index.html", cv: false, detalhe: "hackathon nacional · final 12/12 em São Paulo" },
     { data: "2026-12-01", titulo: "3º Seminário da Suinocultura de MT (ACRISMAT) — Cuiabá + on-line (8h–18h)", tipo: "evento", link: "formacoes.html", cv: false, detalhe: "gratuito · Sympla · ~130 km" },
     { data: "2026-12-01", titulo: "Imersão em IA com Junithi Ueda (Abrasel-MT/Sebrae) — Cuiabá (8h–12h)", tipo: "formacao", link: "formacoes.html", cv: false, detalhe: "Sympla · valor não informado · ~130 km" },
     { data: "2026-12-01", titulo: "Webinar Cidades Digitais do Noroeste Paranaense (RCD) — on-line, 9h MT", tipo: "formacao", link: "formacoes.html", cv: false, detalhe: "gratuito · Sympla" },
